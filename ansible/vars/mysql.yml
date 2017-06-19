@@ -1,0 +1,5 @@
+mysql:
+    root_password: carcada2017
+    user: carcada
+    password: carcada
+    database: carcada
