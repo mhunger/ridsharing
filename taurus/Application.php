@@ -7,12 +7,10 @@
  */
 namespace taurus;
 
-use fitnessmanager\config\FitnessManagerConfig;
-use fitnessmanager\config\FitnessManagerTestConfig;
-use taurus\framework\config\TestContainerConfig;
+use carcada\config\CarcadaContainerConfig;
+use carcada\config\CarcadaTestContainerConfig;
 use taurus\framework\Container;
 use taurus\framework\config\TaurusContainerConfig;
-use taurus\framework\db\entity\DatabaseManager;
 use taurus\framework\Environment;
 use taurus\framework\routing\Router;
 use taurus\framework\routing\Request;
@@ -41,10 +39,10 @@ class Application {
     private function bootConfig()
     {
         $config = new TaurusContainerConfig();
-        $config->merge(new FitnessManagerConfig());
+        $config->merge(new CarcadaContainerConfig());
         if($this->env == Environment::TEST) {
             $config->merge(
-                new FitnessManagerTestConfig()
+                new CarcadaTestContainerConfig()
             );
         }
 
