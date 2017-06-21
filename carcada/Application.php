@@ -5,7 +5,7 @@
  * Date: 23/10/16
  * Time: 11:16
  */
-namespace taurus;
+namespace carcada;
 
 use carcada\config\CarcadaContainerConfig;
 use carcada\config\CarcadaTestContainerConfig;
