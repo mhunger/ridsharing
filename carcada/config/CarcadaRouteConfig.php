@@ -9,6 +9,7 @@
 namespace carcada\config;
 
 
+use carcada\Ride;
 use carcada\user\User;
 use taurus\framework\api\ApiBuilder;
 use taurus\framework\routing\AbstractRouteConfig;
@@ -23,6 +24,12 @@ class CarcadaRouteConfig extends AbstractRouteConfig
 
         $this->addDefaultRoute(
             $this->apiBuilder->cget(User::class)
+        )->addDefaultRoute(
+            $this->apiBuilder->cget(Ride::class)
+        )->addDefaultRoute(
+            $this->apiBuilder->post(Ride::class)
+        )->addDefaultRoute(
+            $this->apiBuilder->get(Ride::class)
         );
     }
 }
