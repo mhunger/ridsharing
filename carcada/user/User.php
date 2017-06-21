@@ -40,6 +40,17 @@ class User implements Entity
     public $password;
 
     /**
+     * @Column(name="first_name")
+     */
+    public $firstname;
+
+    /**
+     * @var string
+     * @Column(name="last_name")
+     */
+    public $lastname;
+
+    /**
      * @return int
      */
     public function getId(): int
@@ -85,5 +96,37 @@ class User implements Entity
     public function setPassword(string $password)
     {
         $this->password = $password;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * @param mixed $firstname
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLastname(): string
+    {
+        return $this->lastname;
+    }
+
+    /**
+     * @param string $lastname
+     */
+    public function setLastname(string $lastname)
+    {
+        $this->lastname = $lastname;
     }
 }
