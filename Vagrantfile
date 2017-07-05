@@ -25,7 +25,7 @@ Vagrant.configure("2") do |config|
     
     config.vm.box_url = "https://vagrantcloud.com/ubuntu/boxes/trusty64/versions/14.04/providers/virtualbox.box"
     
-    config.vm.network :private_network, ip: "192.168.44.15"
+    config.vm.network :private_network, ip: "192.168.44.17"
     config.ssh.forward_agent = true
 
     #############################################################
@@ -38,7 +38,7 @@ Vagrant.configure("2") do |config|
         ansible.inventory_path = "ansible/inventories/dev"
         ansible.limit = 'all'
         ansible.extra_vars = {
-            private_interface: "192.168.10.15",
+            private_interface: "192.168.10.17",
             hostname: "carcada"
         }
     end

@@ -1,0 +1,8 @@
+<p class="rating">
+  <span *ngIf="userRating >= 1; else elseBlock">&#9733;</span><ng-template #elseBlock><span>&#9734;</span></ng-template>
+  <span *ngIf="userRating >= 2; else elseBlock">&#9733;</span><ng-template #elseBlock><span>&#9734;</span></ng-template>
+  <span *ngIf="userRating >= 3; else elseBlock">&#9733;</span><ng-template #elseBlock><span>&#9734;</span></ng-template>
+  <span *ngIf="userRating >= 4; else elseBlock">&#9733;</span><ng-template #elseBlock><span>&#9734;</span></ng-template>
+  <span *ngIf="userRating >= 5; else elseBlock">&#9733;</span><ng-template #elseBlock><span>&#9734;</span></ng-template>
+  {{ userRating }}
+</p>

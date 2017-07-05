@@ -1,0 +1,40 @@
+<div class="container ride-search">
+  <form class="form-inline">
+    <label class="sr-only" for="fromCityInput">From</label>
+    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="fromCityInput" placeholder="From"/>
+
+    <label class="sr-only" for="toCityInput">To</label>
+    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="toCityInput" placeholder="To"/>
+
+    <label class="sr-only" for="travelDate">To</label>
+    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="travelDate" placeholder="Travel Date"/>
+
+    <button class="btn btn-primary">Suchen</button>
+  </form>
+</div>
+<div class="container ride-container">
+  {{ foundResults }} Fahrten gefunden
+</div>
+<div class="container ride-list">
+  <div class="row" *ngFor="let ride of rideList">
+    <div class="col">
+      <div class="row">
+        <div class="col"><img src="{{ ride.img }}" width="80" height="80"/></div>
+      </div>
+      <div class="row">
+        <div class="col"><app-user-rating [userRating]="ride.userRating"></app-user-rating></div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="row">
+        <div class="row"><div class="col"> {{ ride.offeredBy }}</div></div>
+        <div class="row"><div class="col"> Sprache: Deutsch</div></div>
+        <div class="row"><div class="col"> {{ ride.type }}</div> </div>
+      </div></div>
+    <div class="col">{{ ride.price }} EUR</div>
+    <div class="col">{{ ride.departure}}</div>
+    <div class="col">{{ ride.arrival }}</div>
+    <div class="col">{{ ride.seatsFree }} Plätze frei</div>
+    <div class="col"><button class="carcada-btn carcada-btn-green">Kontaktieren</button> </div>
+  </div>
+</div>
