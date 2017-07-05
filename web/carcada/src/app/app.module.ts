@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { RideListComponent } from './ride-list/ride-list.component';
 import { UserRatingComponent } from './user-rating/user-rating.component';
+import {RideService} from "./ride-list/rides.service";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { UserRatingComponent } from './user-rating/user-rating.component';
       }
     ])
   ],
-  providers: [],
+  providers: [RideService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
