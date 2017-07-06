@@ -32,6 +32,21 @@ Vagrant.configure("2") do |config|
     # Ansible provisioning (you need to have ansible installed)
     #############################################################
 
+    # Use the http_proxy, https_proxy, and no_proxy
+    # environment variable if vagrant-proxyconf is installed.
+    if Vagrant.has_plugin?("vagrant-proxyconf")
+      if ENV['http_proxy']
+        config.proxy.http     = "#{ENV['http_proxy']}"
+        config.proxy.https    = "#{ENV['http_proxy']}"
+        config.yum_proxy.http = "#{ENV['http_proxy']}"
+        config.proxy.no_proxy = "#{ENV['no_proxy']}"
+      else
+        config.proxy.http     = ""
+        config.proxy.https    = ""
+        config.yum_proxy.http = ""
+        config.proxy.no_proxy = ""
+      end
+    end
     
     config.vm.provision "ansible" do |ansible|
         ansible.playbook = "ansible/playbook.yml"
