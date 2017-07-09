@@ -19,22 +19,27 @@
   <div class="row" *ngFor="let ride of rideList">
     <div class="col">
       <div class="row">
-        <div class="col"><img src="{{ ride.img }}" width="80" height="80"/></div>
+        <div class="col"><img src="/assets/{{ ride.offeredBy.img }}" width="80" height="80"/></div>
       </div>
       <div class="row">
-        <div class="col"><app-user-rating [userRating]="ride.userRating"></app-user-rating></div>
+        <div class="col"><app-user-rating [userRating]="ride.offeredBy.userRating"></app-user-rating></div>
       </div>
     </div>
-    <div class="col">
-      <div class="row">
-        <div class="row"><div class="col"> {{ ride.offeredBy }}</div></div>
-        <div class="row"><div class="col"> Sprache: Deutsch</div></div>
+    <div class="col-2">
+        <div class="row"><div class="col"> {{ ride.offeredBy.firstname }}, {{ ride.offeredBy.lastname }}</div></div>
+      <div class="row"><div class="col"> Sprache:</div><div class="col"> {{ ride.offeredBy.language }}</div></div>
         <div class="row"><div class="col"> {{ ride.type }}</div> </div>
-      </div></div>
+    </div>
     <div class="col">{{ ride.price }} EUR</div>
-    <div class="col">{{ ride.departure}}</div>
-    <div class="col">{{ ride.arrival }}</div>
-    <div class="col">{{ ride.seatsFree }} Plätze frei</div>
-    <div class="col"><button class="carcada-btn carcada-btn-green">Kontaktieren</button> </div>
+    <div class="col">
+      <div class="row"><div class="col">{{ ride.departureTime}}</div></div>
+      <div class="row"> <div class="col">{{ ride.from}}</div></div>
+    </div>
+    <div class="col">
+      <div class="row"><div class="col">{{ ride.arrivalTime }}</div> </div>
+      <div class="row"><div class="col">{{ ride.to }}</div> </div>
+    </div>
+    <div class="col">{{ ride.seats }} Plätze frei</div>
+    <div class="col"><button class="carcada-btn carcada-btn-green" routerLink="/ride">Kontaktieren</button> </div>
   </div>
 </div>

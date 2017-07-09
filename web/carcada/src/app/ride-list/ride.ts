@@ -1,3 +1,4 @@
+import {User} from "./user";
 /**
  * Created by michael_hunger on 04/07/17.
  */
@@ -6,9 +7,7 @@ export class Ride {
    /** TAURUS-PROPERTY */
    id: number;
 
-   img: string;
-
-   offeredBy: string;
+   offeredBy: User;
 
    type: string;
 
@@ -16,13 +15,15 @@ export class Ride {
 
    departure: string;
 
-   departureCity: string;
+   from: string;
 
-   arrival: string;
+   to: string;
 
-   arrivalCity: string;
+   travelDay: string;
 
-   seatsFree: number;
+   departureTime: string;
 
-   userRating: number;
+   arrivalTime: string;
+
+   seats: number;
 }

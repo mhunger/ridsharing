@@ -8,12 +8,16 @@ import { AppComponent } from './app.component';
 import { RideListComponent } from './ride-list/ride-list.component';
 import { UserRatingComponent } from './user-rating/user-rating.component';
 import {RideService} from "./ride-list/rides.service";
+import { RideDetailsComponent } from './ride-details/ride-details.component';
+import { RideFormComponent } from './ride-form/ride-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RideListComponent,
-    UserRatingComponent
+    UserRatingComponent,
+    RideDetailsComponent,
+    RideFormComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +27,14 @@ import {RideService} from "./ride-list/rides.service";
       {
         path: 'rides',
         component: RideListComponent
+      },
+      {
+        path: 'ride',
+        component: RideDetailsComponent
+      },
+      {
+        path: 'new-ride',
+        component: RideFormComponent
       }
     ])
   ],
