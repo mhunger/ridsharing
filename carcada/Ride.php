@@ -32,6 +32,12 @@ class Ride implements Entity
     public $id;
 
     /**
+     * @var
+     * @Column(name="type")
+     */
+    public $type;
+
+    /**
      * @var string
      * @Column(name="from")
      */
@@ -267,4 +273,22 @@ class Ride implements Entity
     {
         $this->description = $description;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param mixed $type
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
+
+
 }

@@ -51,6 +51,26 @@ class User implements Entity
     public $lastname;
 
     /**
+     * @var
+     * @Column(name="img")
+     */
+    public $img;
+
+    /**
+     * @var float
+     * @Column(name="user_rating")
+     */
+    public $userRating;
+
+
+    /**
+     * @var
+     * @Column(name="language")
+     */
+    public $language;
+
+
+    /**
      * @return int
      */
     public function getId(): int
@@ -129,4 +149,55 @@ class User implements Entity
     {
         $this->lastname = $lastname;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getImg()
+    {
+        return $this->img;
+    }
+
+    /**
+     * @param mixed $img
+     */
+    public function setImg($img)
+    {
+        $this->img = $img;
+    }
+
+    /**
+     * @return float
+     */
+    public function getUserRating(): float
+    {
+        return $this->userRating;
+    }
+
+    /**
+     * @param float $userRating
+     */
+    public function setUserRating(float $userRating)
+    {
+        $this->userRating = $userRating;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLanguage()
+    {
+        return $this->language;
+    }
+
+    /**
+     * @param mixed $language
+     */
+    public function setLanguage($language)
+    {
+        $this->language = $language;
+    }
+
+
+
 }
