@@ -3,6 +3,7 @@
  */
 
 export class Ride {
+   /** TAURUS-PROPERTY */
    id: number;
 
    img: string;

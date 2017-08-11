@@ -1,0 +1,3 @@
+[submodule "web/carcada/src/app/taurissimo"]
+	path = web/carcada/src/app/taurissimo
+	url = https://github.com/mhunger/taurissimo.git
