@@ -1,4 +1,4 @@
-import {User} from "./user";
+import {User} from "./user.model";
 /**
  * Created by michael_hunger on 04/07/17.
  */

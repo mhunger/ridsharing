@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Ride} from './ride';
-import {RideService} from './rides.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { Ride } from './ride.model';
+import { RideService } from './rides.service';
 
 @Component({
   selector: 'app-ride-list',
@@ -11,11 +11,19 @@ export class RideListComponent implements OnInit {
 
   rideList: Ride[];
 
-  foundResults = 200;
+  foundResults = 0;
+
+  fetching = false;
 
   constructor(private rideService: RideService) { }
 
   ngOnInit() {
-    this.rideService.getRides().then(rides => this.rideList = rides);
+    this.fetching = true;
+
+    this.rideService.getRides().then((rides) => {
+      this.rideList = rides;
+      this.foundResults = rides.length;
+      this.fetching = false;
+    });
   }
 }

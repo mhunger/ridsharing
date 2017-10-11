@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Ride} from './ride';
+import {Ride} from './ride.model';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 /**
