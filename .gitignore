@@ -3,3 +3,4 @@
 /.vagrant/
 /carcada.sql.zip
 /scm
+yarn.lock
