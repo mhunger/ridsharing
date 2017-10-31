@@ -15,28 +15,30 @@
 </div>
 <div class="container ride-list">
   <div *ngIf="fetching">Suche nach Fahrten läuft...</div>
-  <div class="row" *ngFor="let ride of rideList">
-    <div>
-      <img src="/assets/{{ ride.offeredBy.img }}" width="80" height="80"/>
-      <div>{{ride.offeredBy.userRating}}</div>
+  <div class="row ride" *ngFor="let ride of rideList">
+    <div class="row header">
+      <div class="col-xs-9">
+        {{ride.from}} – {{ ride.to }}<br>
+        {{ride.price}} EUR
+      </div>
+      <div class="col-xs-3">
+        <img src="/assets/{{ ride.offeredBy.img }}" width="80" height="80"/>
+        <div>{{ride.offeredBy.firstname}}, {{ride.offeredBy.lastname}}</div>
+        <div>{{ride.offeredBy.userRating}}</div>
+      </div>
     </div>
-    <div>
-      <div>{{ride.offeredBy.firstname}}, {{ride.offeredBy.lastname}}</div>
-      <div>Sprache: {{ride.offeredBy.language}}</div>
-      <div>{{ride.type}}</div>
-    </div>
-    <div>{{ride.price}} EUR</div>
-    <div>
-      <div>{{ride.departureTime}}</div>
-      <div>{{ride.from}}</div>
-    </div>
-    <div>
-      <div>{{ ride.arrivalTime }}</div>
-      <div>{{ ride.to }}</div>
-    </div>
-    <div>{{ride.seats}} Plätze frei</div>
-    <div>
-      <carcada-submit-button targetRoute="/ride/{{ride.id}}" buttonText="Kontaktieren"></carcada-submit-button>
+    <div class="row detail">
+      <div class="row main">
+        <div class="col-xs-4">{{ride.departureTime}}<!-- date --></div>
+        <div class="col-xs-4">{{ride.seats}}</div>
+        <div class="col-xs-4">{{ride.departureTime}}<!-- time --></div>
+      </div>
+      <div class="row features">
+        <div class="col-xs-6">Feature 1</div>
+        <div class="col-xs-6">Feature 2</div>
+        <div class="col-xs-6">Feature 3</div>
+        <div class="col-xs-6">Feature 4</div>
+      </div>
     </div>
   </div>
 </div>
