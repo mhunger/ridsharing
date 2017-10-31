@@ -2,17 +2,17 @@
   <form class="form-inline">
     <label class="sr-only" for="fromCityInput">From</label>
     <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="fromCityInput" placeholder="From"/>
-
     <label class="sr-only" for="toCityInput">To</label>
     <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="toCityInput" placeholder="To"/>
-
     <label class="sr-only" for="travelDate">To</label>
     <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="travelDate" placeholder="Travel Date"/>
   </form>
 </div>
+
 <div class="container ride-container">
   {{foundResults}} Fahrten gefunden
 </div>
+
 <div class="container ride-list">
   <div *ngIf="fetching">Suche nach Fahrten läuft...</div>
   <div class="row ride" *ngFor="let ride of rideList">
