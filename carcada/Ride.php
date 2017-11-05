@@ -99,6 +99,42 @@ class Ride implements Entity
     public $description;
 
     /**
+     * @var bool
+     * @Column(name="pet")
+     */
+    public $pet;
+
+    /**
+     * @var bool
+     * @Column(name="twoseats")
+     */
+    public $twoseats;
+
+    /**
+     * @var bool
+     * @Column(name="woman")
+     */
+    public $woman;
+
+    /**
+     * @var bool
+     * @Column(name="smoker")
+     */
+    public $smoker;
+
+    /**
+     * @var string
+     * @Column(name="baggage_size")
+     */
+    public $baggageSize;
+
+    /**
+     * @var string
+     * @Column(name="detour")
+     */
+    public $detour;
+
+    /**
      * @return int
      */
     public function getId()
@@ -290,5 +326,99 @@ class Ride implements Entity
         $this->type = $type;
     }
 
+    /**
+     * @return bool
+     */
+    public function isPet(): bool
+    {
+        return $this->pet;
+    }
 
+    /**
+     * @param bool $pet
+     */
+    public function setPet(bool $pet)
+    {
+        $this->pet = $pet;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isTwoseats(): bool
+    {
+        return $this->twoseats;
+    }
+
+    /**
+     * @param bool $twoseats
+     */
+    public function setTwoseats(bool $twoseats)
+    {
+        $this->twoseats = $twoseats;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isWoman(): bool
+    {
+        return $this->woman;
+    }
+
+    /**
+     * @param bool $woman
+     */
+    public function setWoman(bool $woman)
+    {
+        $this->woman = $woman;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isSmoker(): bool
+    {
+        return $this->smoker;
+    }
+
+    /**
+     * @param bool $smoker
+     */
+    public function setSmoker(bool $smoker)
+    {
+        $this->smoker = $smoker;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBaggageSize(): string
+    {
+        return $this->baggageSize;
+    }
+
+    /**
+     * @param string $baggageSize
+     */
+    public function setBaggageSize(string $baggageSize)
+    {
+        $this->baggageSize = $baggageSize;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDetour(): string
+    {
+        return $this->detour;
+    }
+
+    /**
+     * @param string $detour
+     */
+    public function setDetour(string $detour)
+    {
+        $this->detour = $detour;
+    }
 }
