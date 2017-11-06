@@ -1,3 +1,46 @@
+.ride-list {
+  width: 90%;
+}
+
 .ride-list .ride .header {
-  background-color: green;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #0c9797;
+  color: #ffffff;
+}
+
+/* Generic styles */
+.ride-list .ride .header .stack-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ride-list .ride .header .track {
+  display: block;
+  margin-top: 10px;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+.ride-list .ride .header .price {
+  display: block;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.ride-list .ride .header .profile-picture {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-size: 100% auto;
+}
+
+.ride-list .ride .header .name {
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1px;
 }
