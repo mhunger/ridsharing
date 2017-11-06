@@ -9,6 +9,7 @@ import { RideDetailsComponent } from './ride-details/ride-details.component';
 import { RideFormComponent } from './ride-form/ride-form.component';
 import { RideListComponent } from './ride-list/ride-list.component';
 import { RideService } from "./ride-list/rides.service";
+import { StarRating } from './shared/star-rating/star-rating.component';
 import { LayoutHeaderComponent } from "./shared/layout-header/layout-header.component";
 import { SubmitButtonComponent } from "./shared/submit-button/submit-button.component";
 
@@ -19,6 +20,7 @@ import { SubmitButtonComponent } from "./shared/submit-button/submit-button.comp
     RideListComponent,
     RideDetailsComponent,
     RideFormComponent,
+    StarRating,
     SubmitButtonComponent
   ],
   imports: [

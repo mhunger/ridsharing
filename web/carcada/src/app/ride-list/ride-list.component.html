@@ -9,7 +9,7 @@
         <div class="col-xs-4 stack-vertical">
           <div class="profile-picture" [ngStyle]="{'background-image': 'url(/assets/'+ride.offeredBy.img+')'}"></div>
           <div class="name">{{ride.offeredBy.firstname}}</div>
-          <div>{{ride.offeredBy.userRating}}</div>
+          <div><star-rating [rating]="ride.offeredBy.userRating"></star-rating></div>
         </div>
       </div>
       <div class="row details">
