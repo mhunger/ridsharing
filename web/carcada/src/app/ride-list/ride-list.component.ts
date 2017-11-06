@@ -13,17 +13,12 @@ export class RideListComponent implements OnInit {
 
   foundResults = 0;
 
-  fetching = false;
-
   constructor(private rideService: RideService) { }
 
   ngOnInit() {
-    this.fetching = true;
-
     this.rideService.getRides().then((rides) => {
       this.rideList = rides;
       this.foundResults = rides.length;
-      this.fetching = false;
     });
   }
 }
