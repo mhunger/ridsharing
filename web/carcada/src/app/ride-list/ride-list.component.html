@@ -12,17 +12,19 @@
           <div>{{ride.offeredBy.userRating}}</div>
         </div>
       </div>
-      <div class="row detail">
-        <div class="row main">
-          <div class="col-xs-4">{{ride.departureTime}}<!-- date --></div>
-          <div class="col-xs-4">{{ride.seats}}</div>
-          <div class="col-xs-4">{{ride.departureTime}}<!-- time --></div>
-        </div>
-        <div class="row features">
-          <div class="col-xs-6">Feature 1</div>
-          <div class="col-xs-6">Feature 2</div>
-          <div class="col-xs-6">Feature 3</div>
-          <div class="col-xs-6">Feature 4</div>
+      <div class="row details">
+        <div class="col-xs-12">
+          <div class="row main">
+            <div class="col-xs-4">{{ride.travelDay | date: "d.MM.y"}}</div>
+            <div class="col-xs-4">{{ride.seats}} Plätze frei</div>
+            <div class="col-xs-4">{{ride.travelDay+' '+ride.departureTime | date: "hh:mm"}}</div>
+          </div>
+          <div class="row features">
+            <div class="col-xs-6">Feature 1</div>
+            <div class="col-xs-6">Feature 2</div>
+            <div class="col-xs-6">Feature 3</div>
+            <div class="col-xs-6">Feature 4</div>
+          </div>
         </div>
       </div>
     </div>
