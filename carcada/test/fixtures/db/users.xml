@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <database name="taurus_test">
+        <table_data name="exercise">
+            <row>
+                <field name="id">1</field>
+                <field name="email">m.hunger@carcada.com</field>
+                <field name="password">abc1234</field>
+                <field name="last_name">Hunger</field>
+                <field name="first_name">Michael</field>
+                <field name="img">profile.jpg</field>
+                <field name="user_rating">4.6</field>
+                <field name="language">Deutsch</field>
+            </row>
+        </table_data>
+    </database>
+</mysqldump>
