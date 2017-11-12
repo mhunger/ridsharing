@@ -9,7 +9,7 @@
 namespace carcada\config;
 
 
-use carcada\Ride;
+use carcada\ride\Ride;
 use carcada\user\User;
 use taurus\framework\api\ApiBuilder;
 use taurus\framework\routing\AbstractRouteConfig;
