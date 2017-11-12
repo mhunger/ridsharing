@@ -52,7 +52,7 @@ class Ride implements Entity
     /**
      * @var User
      * @Column(name="id_user_offered_by")
-     * @OneToOne(entity="\carcada\user\User", column="id_user_offered_by", reference_table="user", reference_key_field="id")
+     * @OneToOne(entity="\carcada\user\User", column="id_user_offered_by", reference_table="user", reference_table_field="id")
      */
     public $offeredBy;
 
