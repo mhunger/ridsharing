@@ -1,0 +1,71 @@
+[
+   {
+      "id":1,
+      "type":"Privatwagen",
+      "from":"Muenchen",
+      "to":"Karlsruhe",
+      "offeredBy":{
+         "id":1,
+         "email":"m.hunger@carcada.com",
+         "password":"abc1234",
+         "firstname":"Michael",
+         "lastname":"Hunger",
+         "img":"profile.jpg",
+         "userRating":4.6,
+         "language":"Deutsch"
+      },
+      "travelDay":"2017-06-21",
+      "departureTime":"10:00:00",
+      "arrivalTime":"13:00:00",
+      "seats":"5",
+      "price":"6.00",
+      "departureLocation":"HBF",
+      "description":"Normal Trip to Karlsruhe"
+   },
+   {
+      "id":2,
+      "type":"Mietwagen",
+      "from":"Munich",
+      "to":"Karlsruhe",
+      "offeredBy":{
+         "id":1,
+         "email":"m.hunger@carcada.com",
+         "password":"abc1234",
+         "firstname":"Michael",
+         "lastname":"Hunger",
+         "img":"profile.jpg",
+         "userRating":4.6,
+         "language":"Deutsch"
+      },
+      "travelDay":"2017-01-01",
+      "departureTime":"11:00:00",
+      "arrivalTime":"14:00:00",
+      "seats":"5",
+      "price":"5.00",
+      "departureLocation":"Lerchenauer Str. 40",
+      "description":"Fahrt nach Karlsruhe"
+   },
+   {
+      "id":3,
+      "type":"Privatwagen",
+      "from":"Munich",
+      "to":"Stuttgart",
+      "offeredBy":{
+         "id":1,
+         "email":"m.hunger@carcada.com",
+         "password":"abc1234",
+         "firstname":"Michael",
+         "lastname":"Hunger",
+         "img":"profile.jpg",
+         "userRating":4.6,
+         "language":"Deutsch"
+      },
+      "travelDay":"2017-06-22",
+      "departureTime":"11:30:00",
+      "arrivalTime":"14:30:00",
+      "seats":"3",
+      "price":"8.50",
+      "departureLocation":"Nymphenburger Str. 40",
+      "description":"Fahrt nach stutti"
+   }
+]
