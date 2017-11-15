@@ -54,6 +54,11 @@
   letter-spacing: 1px;
 }
 
+.ride-list .ride .details {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
 .ride-list .ride .details .row.main {
   padding: 24px 0 0;
   font-size: 16px
@@ -66,7 +71,29 @@
 
 .ride-list .ride .details .row.features {
   padding: 10px 0 10px;
+  margin: 0 5px;
   color: #9e9e9e;
+  font-size: 12px;
+  border-bottom: 1px solid #bdbdbd;
+}
+
+.ride-list .ride .details .row.features > div {
+  padding: 0;
+}
+
+.ride-list .ride .details .row.features-more {
+    padding: 10px 0 0;
+    margin: 0;
+}
+
+.ride-list .ride .toggle-ride-details {
+  display: block;
+  padding: 10px 0;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #9e9e9e;
+  cursor: pointer;
 }
 
 /* @TODO: move icons to global stylesheets file */
@@ -80,7 +107,26 @@ span.icon {
   bottom: -2px;
 }
 
+span.icon.circle {
+  border: 2px solid #979797;
+  border-radius: 20px;
+  padding: 6px;
+  width: 26px;
+  height: 26px;
+  background-size: 60% auto;
+  background-position: center center;
+}
+
 span.icon.payment-cash { background-image: url(/assets/rides/icons/cash.png); }
 span.icon.payment-paypal { background-image: url(/assets/rides/icons/paypal.png); }
 span.icon.payment-instant { background-image: url(/assets/rides/icons/instant.png); }
 span.icon.booking-reservation { background-image: url(/assets/rides/icons/reservation.png); }
+/* TODO: replace icons with higher resolution ones! */
+span.icon.pet { background-image: url(/assets/rides/icons/pet.png); }
+span.icon.seats { background-image: url(/assets/rides/icons/seats.png); }
+span.icon.woman { background-image: url(/assets/rides/icons/woman.png); }
+span.icon.smoking { background-image: url(/assets/rides/icons/smoking.png); }
+span.icon.baggage { background-image: url(/assets/rides/icons/baggage.png); }
+span.icon.detour { background-image: url(/assets/rides/icons/detour.png); }
+span.icon.up-arrow { background-image: url(/assets/rides/icons/up-arrow.jpg); }
+span.icon.down-arrow { background-image: url(/assets/rides/icons/down-arrow.jpg); }
