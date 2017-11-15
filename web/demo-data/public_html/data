@@ -20,7 +20,13 @@
       "seats":"5",
       "price":"6.00",
       "departureLocation":"HBF",
-      "description":"Normal Trip to Karlsruhe"
+      "description":"Normal Trip to Karlsruhe",
+      "pet":true,
+      "twoseats":false,
+      "woman":true,
+      "smoker":true,
+      "baggageSize":"",
+      "detour":""
    },
    {
       "id":2,
@@ -43,7 +49,13 @@
       "seats":"5",
       "price":"5.00",
       "departureLocation":"Lerchenauer Str. 40",
-      "description":"Fahrt nach Karlsruhe"
+      "description":"Fahrt nach Karlsruhe",
+      "pet":false,
+      "twoseats":true,
+      "woman":false,
+      "smoker":false,
+      "baggageSize":"",
+      "detour":""
    },
    {
       "id":3,
@@ -66,6 +78,12 @@
       "seats":"3",
       "price":"8.50",
       "departureLocation":"Nymphenburger Str. 40",
-      "description":"Fahrt nach stutti"
+      "description":"Fahrt nach stutti",
+      "pet":false,
+      "twoseats":false,
+      "woman":false,
+      "smoker":false,
+      "baggageSize":"",
+      "detour":""
    }
 ]
