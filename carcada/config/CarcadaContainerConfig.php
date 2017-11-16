@@ -13,6 +13,8 @@ use taurus\framework\config\TaurusContainerConfig;
 use taurus\framework\container\AbstractContainerConfig;
 use taurus\framework\container\ServiceConfig;
 use taurus\framework\db\mysql\MySqlQueryStringBuilderImpl;
+use taurus\framework\security\StandardTokenImpl;
+use taurus\framework\security\StandardTokenAuthenticationServiceImpl;
 
 class CarcadaContainerConfig extends AbstractContainerConfig
 {
@@ -33,7 +35,9 @@ class CarcadaContainerConfig extends AbstractContainerConfig
                 'router',
                 [
                     CarcadaRouteConfig::class,
-                    null
+                    null,
+                    StandardTokenAuthenticationServiceImpl::class,
+                    StandardTokenImpl::class
                 ]);
 
         $this->serviceDefinitions[self::SERVICE_CARCADA_ROUTE_CONFIG] =
@@ -42,5 +46,21 @@ class CarcadaContainerConfig extends AbstractContainerConfig
                 [CarcadaRouteConfig::API_BASE_PATH],
                 true
             );
+
+        $this->serviceDefinitions[TaurusContainerConfig::SERVICE_AUTHENTICATION_TOKEN] =
+                    new ServiceConfig(TaurusContainerConfig::SERVICE_AUTHENTICATION_TOKEN,
+                        'auth_token',
+                        null,
+                        true
+                    );
+
+        $this->serviceDefinitions[TaurusContainerConfig::SERVICE_STANDARD_AUTHENTICATION_SERVICE] =
+            new ServiceConfig(TaurusContainerConfig::SERVICE_STANDARD_AUTHENTICATION_SERVICE,
+                'standard_auth_service',
+                [
+                    null,
+                    StandardTokenImpl::class
+                ]);
+
     }
 }
