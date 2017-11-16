@@ -4,7 +4,7 @@
       "phpunit/dbunit": ">=1.2"
     },
     "require": {
-      "mike/taurus-framework": "v1.0.1rc"
+      "mike/taurus-framework": "v1.1.1rc"
     },
     "autoload": {
         "psr-4": {
