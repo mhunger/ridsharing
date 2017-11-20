@@ -5,19 +5,23 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { RideListComponent } from './ride-list/ride-list.component';
-import { UserRatingComponent } from './user-rating/user-rating.component';
-import {RideService} from "./ride-list/rides.service";
 import { RideDetailsComponent } from './ride-details/ride-details.component';
 import { RideFormComponent } from './ride-form/ride-form.component';
+import { RideListComponent } from './ride-list/ride-list.component';
+import { RideService } from "./ride-list/rides.service";
+import { StarRating } from './shared/star-rating/star-rating.component';
+import { LayoutHeaderComponent } from "./shared/layout-header/layout-header.component";
+import { SubmitButtonComponent } from "./shared/submit-button/submit-button.component";
 
 @NgModule({
   declarations: [
     AppComponent,
+    LayoutHeaderComponent,
     RideListComponent,
-    UserRatingComponent,
     RideDetailsComponent,
-    RideFormComponent
+    RideFormComponent,
+    StarRating,
+    SubmitButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -29,16 +33,16 @@ import { RideFormComponent } from './ride-form/ride-form.component';
         component: RideListComponent
       },
       {
-        path: 'ride',
+        path: 'rides/details',
         component: RideDetailsComponent
       },
       {
-        path: 'new-ride',
+        path: 'rides/create',
         component: RideFormComponent
       }
     ])
   ],
-  providers: [RideService],
-  bootstrap: [AppComponent]
+  providers: [ RideService ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
