@@ -12,7 +12,6 @@ use carcada\config\CarcadaTestContainerConfig;
 use taurus\framework\config\TaurusConfig;
 use taurus\framework\Container;
 use taurus\framework\config\TaurusContainerConfig;
-use taurus\framework\config\TaurusConfig;
 use taurus\framework\Environment;
 use taurus\framework\routing\Router;
 use taurus\framework\routing\Request;
