@@ -13,8 +13,8 @@ use taurus\framework\config\TaurusContainerConfig;
 use taurus\framework\container\AbstractContainerConfig;
 use taurus\framework\container\ServiceConfig;
 use taurus\framework\db\mysql\MySqlQueryStringBuilderImpl;
-use taurus\framework\security\StandardTokenImpl;
 use taurus\framework\security\StandardTokenAuthenticationServiceImpl;
+use taurus\framework\security\StandardTokenImpl;
 
 class CarcadaContainerConfig extends AbstractContainerConfig
 {

@@ -6,7 +6,7 @@
  * Time: 17:02
  */
 
-namespace carcada;
+namespace carcada\ride;
 
 use carcada\user\User;
 use taurus\framework\db\Entity;
