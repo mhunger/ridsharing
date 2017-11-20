@@ -8,13 +8,20 @@
 #to use the Vagrant Cloud and other newer Vagrant features.
 Vagrant.require_version ">= 1.5"
 
+configFile = File.expand_path("../Personalisation", __FILE__)
+if File.exist?(configFile)
+    load configFile
+else
+    abort "Personalisation File not Found."
+end
+
 Vagrant.configure("2") do |config|
 
     config.vm.provider :virtualbox do |v|
-        v.name = "carcada"
+        v.name = $app
         v.customize [
             "modifyvm", :id,
-            "--name", "carcada",
+            "--name", $app,
             "--memory", 1024,
             "--natdnshostresolver1", "on",
             "--cpus", 1,
@@ -22,41 +29,45 @@ Vagrant.configure("2") do |config|
     end
 
     config.vm.box = "ubuntu/trusty64"
-    
+
     config.vm.box_url = "https://vagrantcloud.com/ubuntu/boxes/trusty64/versions/14.04/providers/virtualbox.box"
-    
-    config.vm.network :private_network, ip: "192.168.44.17"
+
+    config.vm.network :private_network, ip: $ip
     config.ssh.forward_agent = true
 
     #############################################################
     # Ansible provisioning (you need to have ansible installed)
     #############################################################
 
-    # Use the http_proxy, https_proxy, and no_proxy
-    # environment variable if vagrant-proxyconf is installed.
-    if Vagrant.has_plugin?("vagrant-proxyconf")
-      if ENV['http_proxy']
-        config.proxy.http     = "#{ENV['http_proxy']}"
-        config.proxy.https    = "#{ENV['http_proxy']}"
-        config.yum_proxy.http = "#{ENV['http_proxy']}"
-        config.proxy.no_proxy = "#{ENV['no_proxy']}"
-      else
-        config.proxy.http     = ""
-        config.proxy.https    = ""
-        config.yum_proxy.http = ""
-        config.proxy.no_proxy = ""
-      end
-    end
-    
+
     config.vm.provision "ansible" do |ansible|
-        ansible.playbook = "ansible/playbook.yml"
-        ansible.inventory_path = "ansible/inventories/dev"
+        ansible.playbook = "scm/nginxmysqlphp7/playbook.yml"
         ansible.limit = 'all'
         ansible.extra_vars = {
-            private_interface: "192.168.10.17",
-            hostname: "carcada"
+            private_interface: $ip,
+            hostname: $host,
+            ip: $ip,
+            appname: $app,
+            mysql_root_password: $mysqlRootPassword,
+            mysql_user: $mysqlUser,
+            mysql_password: $mysqlPassword,
+            mysql_database: $mysqlDatabase
         }
     end
-    
-    config.vm.synced_folder ".", "/var/www/carcada", :nfs => true
+
+      if Vagrant.has_plugin?("vagrant-proxyconf")
+        if ENV['http_proxy']
+          config.proxy.http     = "#{ENV['http_proxy']}"
+          config.proxy.https    = "#{ENV['http_proxy']}"
+          config.yum_proxy.http = "#{ENV['http_proxy']}"
+          config.proxy.no_proxy = "#{ENV['no_proxy']}"
+        else
+          config.proxy.http     = ""
+          config.proxy.https    = ""
+          config.yum_proxy.http = ""
+          config.proxy.no_proxy = ""
+        end
+      end
+
+    config.vm.synced_folder ".", "/var/www/" + $host, :nfs => true
 end
