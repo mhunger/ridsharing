@@ -22,9 +22,37 @@ class CarcadaRouteConfig extends AbstractRouteConfig
     {
         parent::__construct($base, $apiBuilder);
 
+        /**
+         * @SWG\Get(
+         *     path="/users",
+         *     operationId="getUser",
+         *     description="Gets all users",
+         *     produces={"application/json"},
+         *     @SWG\Response(
+         *         response=200,
+         *         description="ride list",
+         *         @SWG\Schema(ref="#/definitions/User")
+         *     )
+         * )
+         */
         $this->addDefaultRoute(
             $this->apiBuilder->cget(User::class)
-        )->addDefaultRoute(
+        )
+        /**
+         * @SWG\Get(
+         *     path="/rides",
+         *     operationId="getRideList",
+         *     description="Gets all rides",
+         *     produces={"application/json"},
+         *     @SWG\Response(
+         *         response=200,
+         *         description="ride list",
+         *         @SWG\Schema(ref="#/definitions/Ride")
+         *     )
+         * )
+         */
+
+            ->addDefaultRoute(
             $this->apiBuilder->cget(Ride::class)
         )->addDefaultRoute(
             $this->apiBuilder->post(Ride::class)

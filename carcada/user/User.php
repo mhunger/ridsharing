@@ -16,6 +16,11 @@ use taurus\framework\db\Entity;
  * @package carcada\user
  *
  * @Entity(table="user")
+ *
+ * @SWG\Definition(
+ *  definition="Users",
+ *  type="object"
+ * )
  */
 class User implements Entity
 {
@@ -23,42 +28,49 @@ class User implements Entity
      * @var int
      * @Id
      * @Column(name="id")
+     * @SWG\Property()
      */
     public $id;
 
     /**
      * @var string
-     * @Column(name="email")
      *
+     * @Column(name="email")
+     * @SWG\Property()
      */
     public $email;
 
     /**
      * @var string
      * @Column(name="password")
+     * @SWG\Property()
      */
     public $password;
 
     /**
      * @Column(name="first_name")
+     * @SWG\Property()
      */
     public $firstname;
 
     /**
      * @var string
      * @Column(name="last_name")
+     * @SWG\Property()
      */
     public $lastname;
 
     /**
      * @var
      * @Column(name="img")
+     * @SWG\Property()
      */
     public $img;
 
     /**
      * @var float
      * @Column(name="user_rating")
+     * @SWG\Property()
      */
     public $userRating;
 
@@ -66,6 +78,7 @@ class User implements Entity
     /**
      * @var
      * @Column(name="language")
+     * @SWG\Property()
      */
     public $language;
 

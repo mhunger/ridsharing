@@ -1,0 +1,149 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Carcada API",
+        "description": "The Carcada API for the frontned",
+        "version": "1.0.0"
+    },
+    "host": "carcada.local",
+    "basePath": "/api",
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/users": {
+            "get": {
+                "description": "Gets all users",
+                "operationId": "getUser",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ride list",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                }
+            }
+        },
+        "/rides": {
+            "get": {
+                "description": "Gets all rides",
+                "operationId": "getRideList",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ride list",
+                        "schema": {
+                            "$ref": "#/definitions/Ride"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Ride": {
+            "properties": {
+                "id": {
+                    "type": "int"
+                },
+                "type": {
+                    "description": "@Column(name=\"type\")"
+                },
+                "from": {
+                    "type": "string"
+                },
+                "to": {
+                    "type": "string"
+                },
+                "offeredBy": {
+                    "description": "Person who offers the ride",
+                    "$ref": "#/definitions/User"
+                },
+                "travelDay": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "departureTime": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "arrivalTime": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "seats": {
+                    "type": "integer"
+                },
+                "price": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "departureLocation": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "pet": {
+                    "type": "boolean"
+                },
+                "twoseats": {
+                    "type": "boolean"
+                },
+                "woman": {
+                    "type": "boolean"
+                },
+                "smoker": {
+                    "type": "boolean"
+                },
+                "baggageSize": {
+                    "type": "string"
+                },
+                "detour": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "User": {
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "firstname": {},
+                "lastname": {
+                    "type": "string"
+                },
+                "img": {
+                    "description": "@Column(name=\"img\")"
+                },
+                "userRating": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "language": {
+                    "description": "@Column(name=\"language\")"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

@@ -20,6 +20,11 @@ use taurus\framework\annotation\OneToOne;
  * @package carcada
  *
  * @Entity(table="ride")
+ * @SWG\Definition(
+ *     definition="Ride",
+ *     type="object"
+ * )
+ *
  */
 class Ride implements Entity
 {
@@ -28,24 +33,30 @@ class Ride implements Entity
      * @var int
      * @Column(name="id")
      * @Id
+     * @SWG\Property(
+     *     type="int"
+     * )
      */
     public $id;
 
     /**
      * @var
      * @Column(name="type")
+     * @SWG\Property()
      */
     public $type;
 
     /**
      * @var string
      * @Column(name="from")
+     * @SWG\Property()
      */
     public $from;
 
     /**
      * @var string
      * @Column(name="to")
+     * @SWG\Property()
      */
     public $to;
 
@@ -53,84 +64,100 @@ class Ride implements Entity
      * @var User
      * @Column(name="id_user_offered_by")
      * @OneToOne(entity="\carcada\user\User", column="id_user_offered_by", reference_table="user", reference_table_field="id")
+     * @SWG\Property(
+     *     description="Person who offers the ride"
+     * )
      */
     public $offeredBy;
 
     /**
-     * @var \DateTime
      * @Column(name="travel_day")
+     * @var \DateTime
+     * @SWG\Property()
      */
     public $travelDay;
 
     /**
      * @var \DateTime
      * @Column(name="departure_time")
+     * @SWG\Property()
      */
     public $departureTime;
 
     /**
      * @var \DateTime
      * @Column(name="arrival_time")
+     * @SWG\Property()
      */
     public $arrivalTime;
 
     /**
      * @var int
      * @Column(name="seats")
+     * @SWG\Property()
      */
     public $seats;
 
     /**
      * @var float
      * @Column(name="price")
+     * @SWG\Property()
      */
     public $price;
 
     /**
      * @var string
      * @Column(name="departure_location")
+     * @SWG\Property()
      */
     public $departureLocation;
 
     /**
      * @var string
      * @Column(name="description")
+     * @SWG\Property()
      */
     public $description;
 
     /**
      * @var bool
      * @Column(name="pet")
+     * @SWG\Property()
      */
     public $pet;
 
     /**
      * @var bool
      * @Column(name="twoseats")
+     * @SWG\Property()
      */
     public $twoseats;
 
     /**
      * @var bool
      * @Column(name="woman")
+     * @SWG\Property()
      */
     public $woman;
 
     /**
      * @var bool
      * @Column(name="smoker")
+     * @SWG\Property()
      */
     public $smoker;
 
     /**
      * @var string
      * @Column(name="baggage_size")
+     * @SWG\Property()
      */
     public $baggageSize;
 
     /**
      * @var string
      * @Column(name="detour")
+     * @SWG\Property()
      */
     public $detour;
 
