@@ -29,6 +29,11 @@ import { SubmitButtonComponent } from "./shared/submit-button/submit-button.comp
     HttpModule,
     RouterModule.forRoot([
       {
+        path: '',
+        redirectTo: 'rides',
+        pathMatch: 'full'
+      },
+      {
         path: 'rides',
         component: RideListComponent
       },
