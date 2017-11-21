@@ -38,7 +38,7 @@ import { SubmitButtonComponent } from "./shared/submit-button/submit-button.comp
         component: RideListComponent
       },
       {
-        path: 'rides/details',
+        path: 'rides/view/:id',
         component: RideDetailsComponent
       },
       {
