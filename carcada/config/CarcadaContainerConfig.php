@@ -46,5 +46,21 @@ class CarcadaContainerConfig extends AbstractContainerConfig
                 [CarcadaRouteConfig::API_BASE_PATH],
                 true
             );
+
+        $this->serviceDefinitions[TaurusContainerConfig::SERVICE_AUTHENTICATION_TOKEN] =
+                    new ServiceConfig(TaurusContainerConfig::SERVICE_AUTHENTICATION_TOKEN,
+                        'auth_token',
+                        null,
+                        true
+                    );
+
+        $this->serviceDefinitions[TaurusContainerConfig::SERVICE_STANDARD_AUTHENTICATION_SERVICE] =
+            new ServiceConfig(TaurusContainerConfig::SERVICE_STANDARD_AUTHENTICATION_SERVICE,
+                'standard_auth_service',
+                [
+                    null,
+                    StandardTokenImpl::class
+                ]);
+
     }
 }

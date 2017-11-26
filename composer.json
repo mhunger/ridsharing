@@ -4,8 +4,8 @@
       "phpunit/dbunit": ">=1.2"
     },
     "require": {
-      "mike/taurus-framework": "v1.1.2rc",
-      "zircote/swagger-php": "^2.0"
+      "mike/taurus-framework": "~v1.1.4rc",
+        "zircote/swagger-php": "^2.0"
     },
     "autoload": {
         "psr-4": {
