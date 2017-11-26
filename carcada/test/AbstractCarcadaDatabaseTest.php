@@ -70,7 +70,7 @@ abstract class AbstractCarcadaDatabaseTest extends AbstractDatabaseTest
 
     protected function getFixturePath()
     {
-        $this->fixturePath = $this->fixturesDbState;
+        $this->fixturePath = getcwd() . DIRECTORY_SEPARATOR . $this->fixturesDbState;
 
     }
 
