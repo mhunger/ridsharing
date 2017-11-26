@@ -1,20 +1,24 @@
 - name: remove if already exists
   command: rm -rf /usr/share/nginx/html/swagger
-  force: yes
 
 - file:
     src: /etc/nginx/sites-available/swagger-ui
     dest: /etc/nginx/sites-enabled/swagger-ui
     state: link
 
-- name: Create index.html for swagger
-  template: src=index.html.tpl dest=swagger-ui-dist/index.html
+- name: Ensures swagger directory exists
+  file:
+    path: /usr/share/nginx/html/swagger/
+    state: directory
 
-- name: Run swagger to generate swagger.json
-  command: ./var/www/{{ hostname }}/bin/swagger --output=swagger-ui-dist/swagger.json ./{{ appname }}
+- name: Create index.html for swagger
+  template: src=index.html.tpl dest=/usr/share/nginx/html/swagger/index.html
 
 - name: Copy prepared swagger-ui to /usr/share/nginx/html/swagger
   copy:
-    src: swagger-ui-dist
-    dest: /usr/share/nginx/html/swagger
+    src: swagger
+    dest: /usr/share/nginx/html
     mode: 0777
+
+- name: Run swagger to generate swagger.json
+  command: /var/www/{{ hostname }}/vendor/bin/swagger --output /usr/share/nginx/html/swagger/swagger.json /var/www/{{ hostname }}/{{ hostname }}
