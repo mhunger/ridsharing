@@ -4,7 +4,7 @@ server {
     root /var/www/{{ hostname }}/web;
     index index.php
 
-    server_name carcada-dev.com 192.168.44.14;
+    server_name {{ hostname }} {{ ip }};
 
     location / {
         try_files $uri $uri/ /index.php?$query_string;

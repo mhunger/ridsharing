@@ -1,21 +1,20 @@
-- git:
-    repo: https://github.com/swagger-api/swagger-ui.git
-    dest: /tmp/swagger-ui
-    force: yes
-    version: HEAD
-
-- file:
-    path: /tmp/swagger-ui/dist
-    mode: 0777
-
 - name: remove if already exists
   command: rm -rf /usr/share/nginx/html/swagger
-
-- name: move swagger-uid dist to nginx html
-  command: mv -f /tmp/swagger-ui/dist /usr/share/nginx/html/swagger
+  force: yes
 
 - file:
     src: /etc/nginx/sites-available/swagger-ui
     dest: /etc/nginx/sites-enabled/swagger-ui
     state: link
 
+- name: Create index.html for swagger
+  template: src=index.html.tpl dest=swagger-ui-dist/index.html
+
+- name: Run swagger to generate swagger.json
+  command: ./var/www/{{ hostname }}/bin/swagger --output=swagger-ui-dist/swagger.json ./{{ appname }}
+
+- name: Copy prepared swagger-ui to /usr/share/nginx/html/swagger
+  copy:
+    src: swagger-ui-dist
+    dest: /usr/share/nginx/html/swagger
+    mode: 0777

@@ -11,7 +11,7 @@
     - [ "vars/nginxphp.yml", "vars/ws_defaults.yml" ]
   roles:
     - init
-    - swagger-ui
     - nginx
+    - swagger-ui
     - mysql
     - php7
