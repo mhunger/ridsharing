@@ -39,7 +39,6 @@ CREATE TABLE `message` (
 
 # Dump of table ride
 # ------------------------------------------------------------
-
 DROP TABLE IF EXISTS `ride`;
 
 CREATE TABLE `ride` (
@@ -48,9 +47,8 @@ CREATE TABLE `ride` (
   `from` varchar(255) NOT NULL DEFAULT '',
   `to` varchar(255) DEFAULT NULL,
   `id_user_offered_by` int(11) unsigned DEFAULT NULL,
-  `travel_day` date DEFAULT NULL,
-  `departure_time` time DEFAULT NULL,
-  `arrival_time` time DEFAULT NULL,
+  `travel_day` datetime DEFAULT NULL,
+  `arrival_time` datetime DEFAULT NULL,
   `seats` int(11) unsigned NOT NULL,
   `price` decimal(6,2) unsigned NOT NULL,
   `departure_location` varchar(255) DEFAULT '',
@@ -61,8 +59,11 @@ CREATE TABLE `ride` (
   `smoker` tinyint(1) DEFAULT '0',
   `baggage_size` varchar(255) DEFAULT '',
   `detour` varchar(255) DEFAULT '',
+  `return` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `free_seating` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 
 

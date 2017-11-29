@@ -9,9 +9,10 @@
                 <field name="from">Muenchen</field>
                 <field name="to">Karlsruhe</field>
                 <field name="id_user_offered_by">1</field>
-                <field name="travel_day">2017-06-21</field>
-                <field name="departure_time">10:00:00</field>
-                <field name="arrival_time">13:00:00</field>
+                <field name="travel_day">2017-06-21 00:00:00</field>
+                <field name="arrival_time">2017-06-21 00:00:00</field>
+                <field name="return">1</field>
+                <field name="free_seating">1</field>
                 <field name="seats">5</field>
                 <field name="price">6.00</field>
                 <field name="departure_location">HBF</field>
@@ -30,11 +31,13 @@
                 <field name="from">Munich</field>
                 <field name="to">Karlsruhe</field>
                 <field name="id_user_offered_by">1</field>
-                <field name="travel_day">2017-01-01</field>
-                <field name="departure_time">11:00:00</field>
-                <field name="arrival_time">14:00:00</field>
+                <field name="travel_day">2017-01-01 00:00:00</field>
+
+                <field name="arrival_time">2017-01-01 14:00:00</field>
                 <field name="seats">5</field>
                 <field name="price">5.00</field>
+                <field name="return">1</field>
+                <field name="free_seating">1</field>
                 <field name="departure_location">Lerchenauer Str. 40</field>
                 <field name="description">Fahrt nach Karlsruhe</field>
                 <field name="pet">0</field>
@@ -51,11 +54,13 @@
                 <field name="from">Munich</field>
                 <field name="to">Stuttgart</field>
                 <field name="id_user_offered_by">1</field>
-                <field name="travel_day">2017-06-22</field>
-                <field name="departure_time">11:30:00</field>
-                <field name="arrival_time">14:30:00</field>
+                <field name="travel_day">2017-06-22 13:00:00</field>
+
+                <field name="arrival_time">2017-06-22 14:30:00</field>
                 <field name="seats">3</field>
                 <field name="price">8.50</field>
+                <field name="return">0</field>
+                <field name="free_seating">0</field>
                 <field name="departure_location">Nymphenburger Str. 40</field>
                 <field name="description">Fahrt nach stutti</field>
                 <field name="pet">0</field>

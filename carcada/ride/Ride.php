@@ -79,16 +79,11 @@ class Ride implements Entity
     /**
      * @Column(name="travel_day")
      * @var \DateTime
-     * @SWG\Property()
+     * @SWG\Property(
+     *     description="The departure date and time")
+     * )
      */
     public $travelDay;
-
-    /**
-     * @var \DateTime
-     * @Column(name="departure_time")
-     * @SWG\Property()
-     */
-    public $departureTime;
 
     /**
      * @var \DateTime
@@ -96,6 +91,23 @@ class Ride implements Entity
      * @SWG\Property()
      */
     public $arrivalTime;
+
+    /**
+     * @var bool
+     * @Column(name="return")
+     * @SWG\Property()
+     */
+    public $return;
+
+    /**
+     * @var bool
+     * @Column(name="free_seating")
+     * @SWG\Property(
+     *     description="Whether seats are freely chosable or need to be reserved"
+     * )
+     *
+     */
+    public $freeSeating;
 
     /**
      * @var int
@@ -469,5 +481,37 @@ class Ride implements Entity
     public function setStops(array $stops)
     {
         $this->stops = $stops;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isReturn(): bool
+    {
+        return $this->return;
+    }
+
+    /**
+     * @param bool $return
+     */
+    public function setReturn(bool $return = null)
+    {
+        $this->return = $return;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isFreeSeating(): bool
+    {
+        return $this->freeSeating;
+    }
+
+    /**
+     * @param bool $freeSeating
+     */
+    public function setFreeSeating(bool $freeSeating)
+    {
+        $this->freeSeating = $freeSeating;
     }
 }
