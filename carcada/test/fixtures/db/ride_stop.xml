@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<!--
+-
+- Sequel Pro XML dump
+- Version 4529
+-
+- http://www.sequelpro.com/
+- https://github.com/sequelpro/sequelpro
+-
+- Host: 127.0.0.1 (MySQL 5.5.55-0ubuntu0.14.04.1)
+- Database: carcada
+- Generation Time Time: 2017-11-29 20:59:27 +0000
+-
+-->
+
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <database name="carcada">
+        <table_data name="ride_stop">
+            <row>
+                <field name="id">0</field>
+                <field name="stop_name">Nürnberg</field>
+                <field name="id_ride">1</field>
+            </row>
+
+        </table_data>
+
+    </database>
+</mysqldump>

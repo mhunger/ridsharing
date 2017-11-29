@@ -71,6 +71,12 @@ class Ride implements Entity
     public $offeredBy;
 
     /**
+     * @var array
+     * @OneToMany(entity="\carcada\ride\RideStop", column="id", reference_table="ride_stop", foreign_key_field="id_ride")
+     */
+    public $stops;
+
+    /**
      * @Column(name="travel_day")
      * @var \DateTime
      * @SWG\Property()
@@ -447,5 +453,21 @@ class Ride implements Entity
     public function setDetour(string $detour)
     {
         $this->detour = $detour;
+    }
+
+    /**
+     * @return array
+     */
+    public function getStops(): array
+    {
+        return $this->stops;
+    }
+
+    /**
+     * @param array $stops
+     */
+    public function setStops(array $stops)
+    {
+        $this->stops = $stops;
     }
 }

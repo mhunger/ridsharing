@@ -5,6 +5,13 @@
     "from": "Muenchen",
     "to": "Karlsruhe",
     "offeredBy": null,
+    "stops": [
+      {
+        "id": 0,
+        "rideId": 1,
+        "stopName": "N\u00fcrnberg"
+      }
+    ],
     "travelDay": "2017-06-21",
     "departureTime": "10:00:00",
     "arrivalTime": "13:00:00",
@@ -25,6 +32,7 @@
     "from": "Munich",
     "to": "Karlsruhe",
     "offeredBy": null,
+    "stops": [],
     "travelDay": "2017-01-01",
     "departureTime": "11:00:00",
     "arrivalTime": "14:00:00",
@@ -45,6 +53,7 @@
     "from": "Munich",
     "to": "Stuttgart",
     "offeredBy": null,
+    "stops": [],
     "travelDay": "2017-06-22",
     "departureTime": "11:30:00",
     "arrivalTime": "14:30:00",

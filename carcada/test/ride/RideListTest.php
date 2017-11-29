@@ -18,7 +18,8 @@ class RideListTest extends AbstractCarcadaDatabaseTest
     function getFixtureFiles(): array
     {
         return [
-            'rides.xml'
+            'rides.xml',
+            'ride_stop.xml'
         ];
     }
 

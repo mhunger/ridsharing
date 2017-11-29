@@ -84,6 +84,16 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+DROP TABLE IF EXISTS `ride_stop`;
+
+CREATE TABLE `ride_stop` (
+  `stop_name` varchar(255) NOT NULL DEFAULT '',
+  `id_ride` int(10) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `fk_ride_stop_ride` (`id_ride`),
+  CONSTRAINT `fk_ride_stop_ride` FOREIGN KEY (`id_ride`) REFERENCES `ride` (`id`) ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
