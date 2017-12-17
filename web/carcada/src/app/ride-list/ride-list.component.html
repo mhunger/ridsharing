@@ -1,4 +1,15 @@
-<div class="ride-filter">
+<div class="container ride-filter-form" [class.open]="isFilterFormVisible">
+  <ul>
+    <li>Start</li>
+    <li>Ziel</li>
+    <li>Datum</li>
+    <li>Uhrzeit</li>
+    <li>Anzahl Personen</li>
+    <li>Submit button</li>
+  </ul>
+</div>
+<div class="ride-filter-shadow" [class.show]="isFilterFormVisible" (click)="toggleFilterForm()"><!-- empty --></div>
+<div class="ride-filter-summary-container" (click)="toggleFilterForm()">
   <div class="filter-summary">M&uuml;nchen – Hamburg • 3.12.2017 • 2 Personen</div>
 </div>
 <div class="container ride-list">
