@@ -12,6 +12,6 @@
   roles:
     - init
     - nginx
-    - swagger-ui
+#    - swagger-ui
     - mysql
     - php7
