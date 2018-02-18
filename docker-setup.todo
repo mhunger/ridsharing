@@ -1,0 +1,8 @@
+Setup for Docker image:
+    ☐ Setup basic Docker image
+    ☐ Mount files
+    ☐ Run `composer install`
+    ☐ Configure nginx
+    ☐ Connect database
+    ☐ Build frontend
+    ☐ Deliver frontend via nginx
