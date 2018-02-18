@@ -4,14 +4,14 @@
   sudo: yes
   apt: pkg={{ item }} state=latest
   with_items:
+    - php-xdebug
     - php7.1
+    - php7.1-cgi
+    - php7.1-cli
     - php7.1-common
+    - php7.1-fpm
     - php7.1-mbstring
     - php7.1-mysql
     - php7.1-pdo
     - php7.1-xml
-    - php7.1-cli
-    - php7.1-cgi
-    - php7.1-fpm
-    - php-xdebug
     - php7.1-yaml
