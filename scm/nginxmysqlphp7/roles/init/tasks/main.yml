@@ -10,6 +10,8 @@
     - wget
     - python-software-properties
     - python-apt
+    - zip
+    - unzip
 
 - name: Add ppa Repository
   sudo: yes
