@@ -6,7 +6,8 @@
     "require": {
       "mike/taurus-framework": "~v1.1.4rc",
         "zircote/swagger-php": "^2.0",
-        "robmorgan/phinx": "^0.9.1"
+        "robmorgan/phinx": "^0.9.1",
+        "fzaninotto/faker": "^1.7"
     },
     "autoload": {
         "psr-4": {
