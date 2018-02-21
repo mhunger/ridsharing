@@ -13,6 +13,8 @@ export class RideListComponent implements OnInit {
 
   foundResults = 0;
 
+  isFilterFormVisible = false;
+
   constructor(private rideService: RideService) { }
 
   ngOnInit() {
@@ -20,5 +22,9 @@ export class RideListComponent implements OnInit {
       this.rideList = rides;
       this.foundResults = rides.length;
     });
+  }
+
+  toggleFilterForm() {
+    this.isFilterFormVisible = !this.isFilterFormVisible;
   }
 }

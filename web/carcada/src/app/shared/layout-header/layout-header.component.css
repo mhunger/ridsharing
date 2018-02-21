@@ -1,5 +1,7 @@
 .layout-header {
   border-bottom: 5px solid #0FB2B2;
+  background-color: #FAFAFA;
+  z-index: 10;
 }
 
 .layout-header .navbar-nav {
