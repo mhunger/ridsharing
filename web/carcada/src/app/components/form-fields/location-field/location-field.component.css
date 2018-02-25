@@ -1,8 +1,5 @@
-.location-field-container {
-    position: relative;
-}
-
 .input-container {
+    position: relative;
     margin: 1em 0;
 }
 
