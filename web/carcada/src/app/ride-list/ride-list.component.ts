@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Ride } from '../models/ride.model';
+import { Ride } from '../models/Ride';
 import { RideService } from '../services/rides.service';
 
 @Component({
