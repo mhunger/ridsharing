@@ -595,7 +595,7 @@ class Ride implements Entity
     /**
      * @return bool
      */
-    public function getAgbAgreed(): bool
+    public function getAgbAgreed(): ?bool
     {
         return $this->agbAgreed;
     }
@@ -611,7 +611,7 @@ class Ride implements Entity
     /**
      * @return bool
      */
-    public function getDataPrivacyAgreed(): bool
+    public function getDataPrivacyAgreed(): ?bool
     {
         return $this->dataPrivacyAgreed;
     }
@@ -627,7 +627,7 @@ class Ride implements Entity
     /**
      * @return bool
      */
-    public function getImmediateBooking(): bool
+    public function getImmediateBooking(): ?bool
     {
         return $this->immediateBooking;
     }
@@ -651,7 +651,7 @@ class Ride implements Entity
     /**
      * @param string $payment
      */
-    public function setPayment(string $payment = null)
+    public function setPayment(string $payment)
     {
         $this->payment = $payment;
     }
@@ -659,7 +659,7 @@ class Ride implements Entity
     /**
      * @return bool
      */
-    public function getPassengerSeatReserved(): bool
+    public function getPassengerSeatReserved(): ?bool
     {
         return $this->passengerSeatReserved;
     }
@@ -675,7 +675,7 @@ class Ride implements Entity
     /**
      * @return bool
      */
-    public function getBackSeatLeftReserved(): bool
+    public function getBackSeatLeftReserved(): ?bool
     {
         return $this->backSeatLeftReserved;
     }
@@ -691,7 +691,7 @@ class Ride implements Entity
     /**
      * @return bool
      */
-    public function getBackSeatRightReserved(): bool
+    public function getBackSeatRightReserved(): ?bool
     {
         return $this->backSeatRightReserved;
     }
@@ -707,7 +707,7 @@ class Ride implements Entity
     /**
      * @return bool
      */
-    public function getBackSeatMiddleReserved(): bool
+    public function getBackSeatMiddleReserved(): ?bool
     {
         return $this->backSeatMiddleReserved;
     }
@@ -723,7 +723,7 @@ class Ride implements Entity
     /**
      * @return bool
      */
-    public function getThirdRowLeftReserved(): bool
+    public function getThirdRowLeftReserved(): ?bool
     {
         return $this->thirdRowLeftReserved;
     }
@@ -739,7 +739,7 @@ class Ride implements Entity
     /**
      * @return bool
      */
-    public function getThirdRowRightReserved(): bool
+    public function getThirdRowRightReserved(): ?bool
     {
         return $this->thirdRowRightReserved;
     }
@@ -755,7 +755,7 @@ class Ride implements Entity
     /**
      * @return bool
      */
-    public function getThirdRowMiddleReserved(): bool
+    public function getThirdRowMiddleReserved(): ?bool
     {
         return $this->thirdRowMiddleReserved;
     }
