@@ -28,6 +28,6 @@ class AddFieldDataPrivacyAgreed extends AbstractMigration
      */
     public function change()
     {
-        $this->query('ALTER TABLE `ride` ADD `data_privacy_agreed` BOOL  NOT NULL  DEFAULT \'1\'   AFTER `agb_agreed`;');
+        $this->query('ALTER TABLE `ride` ADD `data_privacy_agreed` BOOL  NOT NULL  DEFAULT \'1\'   AFTER `agb_agreed`');
     }
 }
