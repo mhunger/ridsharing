@@ -34,3 +34,4 @@ vagrant up
 - Run composer when provisioning
 - `zip` and `unzip` to system tools
 - run phinx (`phinx install`?) after at the end to init DB
+- set php.in and my.cnf to UTF8 to be able to use special characters in the data
