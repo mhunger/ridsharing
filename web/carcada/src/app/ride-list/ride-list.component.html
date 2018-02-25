@@ -1,6 +1,6 @@
 <div class="container ride-filter-form" [class.open]="isFilterFormVisible">
-  <location-field></location-field>
-  <location-field></location-field>
+  <location-field label="Start:" radiusOption="true"></location-field>
+  <location-field label="Ziel:" radiusOption="true"></location-field>
 </div>
 <div class="ride-filter-shadow" [class.show]="isFilterFormVisible" (click)="toggleFilterForm()"><!-- empty --></div>
 <div class="ride-filter-summary-container" (click)="toggleFilterForm()">

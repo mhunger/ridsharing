@@ -1,5 +1,5 @@
 import { Directive, ElementRef } from '@angular/core';
-import { IAutocomplete } from '../../../interfaces/services/GoogleMaps';
+import { IAutocomplete } from '../../interfaces/services/GoogleMaps';
 
 @Directive({
     selector: '[mapsAutocomplete]',

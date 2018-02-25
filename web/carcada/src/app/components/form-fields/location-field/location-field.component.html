@@ -1,6 +1,11 @@
-<div *ngIf="label">
-    <label>{{label}}</label>
-</div>
-<div class="input-container">
-    <input type="text" mapsAutocomplete />
+<div class="location-field-container">
+    <div *ngIf="label">
+        <label>{{label}}</label>
+    </div>
+    <div class="input-container">
+        <input type="text" mapsAutocomplete />
+        <div class="radius-container" *ngIf="radiusOption">
+            <button (click)="openRadiusDialog()">{{"+"+radius+" KM"}}</button>
+        </div>
+    </div>
 </div>
