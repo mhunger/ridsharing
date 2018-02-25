@@ -15,6 +15,8 @@ class UserSeeder extends AbstractSeed
      */
     public function run()
     {
+        $this->table('user')->truncate();
+
         $faker = Faker\Factory::create();
         $data = [];
         for ($i = 0; $i < 100; $i++) {
