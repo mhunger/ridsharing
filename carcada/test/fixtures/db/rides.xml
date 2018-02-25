@@ -23,6 +23,17 @@
                 <field name="smoker">0</field>
                 <field name="baggage_size"></field>
                 <field name="detour"></field>
+                <field name="agb_agreed">1</field>
+                <field name="data_privacy_agreed">1</field>
+                <field name="immediate_booking">1</field>
+                <field name="payment">ONLINE</field>
+                <field name="passenger_seat_reserved">1</field>
+                <field name="back_seat_left_reserved">1</field>
+                <field name="back_seat_right_reserved">0</field>
+                <field name="back_seat_middle_reserved">1</field>
+                <field name="third_row_left_reserved">0</field>
+                <field name="third_row_right_reserved">0</field>
+                <field name="third_row_middle_reserved">0</field>
             </row>
 
             <row>
@@ -46,6 +57,17 @@
                 <field name="smoker">0</field>
                 <field name="baggage_size"></field>
                 <field name="detour"></field>
+                <field name="agb_agreed">1</field>
+                <field name="data_privacy_agreed">1</field>
+                <field name="immediate_booking">1</field>
+                <field name="payment">ONLINE</field>
+                <field name="passenger_seat_reserved">1</field>
+                <field name="back_seat_left_reserved">1</field>
+                <field name="back_seat_right_reserved">0</field>
+                <field name="back_seat_middle_reserved">1</field>
+                <field name="third_row_left_reserved">0</field>
+                <field name="third_row_right_reserved">0</field>
+                <field name="third_row_middle_reserved">0</field>
             </row>
 
             <row>
@@ -69,6 +91,17 @@
                 <field name="smoker">0</field>
                 <field name="baggage_size"></field>
                 <field name="detour"></field>
+                <field name="agb_agreed">1</field>
+                <field name="data_privacy_agreed">1</field>
+                <field name="immediate_booking">1</field>
+                <field name="payment">ONLINE</field>
+                <field name="passenger_seat_reserved">1</field>
+                <field name="back_seat_left_reserved">1</field>
+                <field name="back_seat_right_reserved">0</field>
+                <field name="back_seat_middle_reserved">1</field>
+                <field name="third_row_left_reserved">0</field>
+                <field name="third_row_right_reserved">0</field>
+                <field name="third_row_middle_reserved">0</field>
             </row>
 
         </table_data>
