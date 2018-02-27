@@ -342,7 +342,7 @@ class Ride implements Entity
     /**
      * @return string
      */
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->description;
     }
@@ -374,7 +374,7 @@ class Ride implements Entity
     /**
      * @return bool
      */
-    public function isPet(): bool
+    public function isPet(): ?bool
     {
         return $this->pet;
     }
@@ -390,7 +390,7 @@ class Ride implements Entity
     /**
      * @return bool
      */
-    public function isTwoseats(): bool
+    public function isTwoseats(): ?bool
     {
         return $this->twoseats;
     }
@@ -406,7 +406,7 @@ class Ride implements Entity
     /**
      * @return bool
      */
-    public function isWoman(): bool
+    public function isWoman(): ?bool
     {
         return $this->woman;
     }
@@ -422,7 +422,7 @@ class Ride implements Entity
     /**
      * @return bool
      */
-    public function isSmoker(): bool
+    public function isSmoker(): ?bool
     {
         return $this->smoker;
     }
@@ -438,7 +438,7 @@ class Ride implements Entity
     /**
      * @return string
      */
-    public function getBaggageSize(): string
+    public function getBaggageSize(): ?string
     {
         return $this->baggageSize;
     }
@@ -454,7 +454,7 @@ class Ride implements Entity
     /**
      * @return string
      */
-    public function getDetour(): string
+    public function getDetour(): ?string
     {
         return $this->detour;
     }
@@ -470,7 +470,7 @@ class Ride implements Entity
     /**
      * @return array
      */
-    public function getStops(): array
+    public function getStops(): ?array
     {
         return $this->stops;
     }
@@ -486,7 +486,7 @@ class Ride implements Entity
     /**
      * @return bool
      */
-    public function isReturn(): bool
+    public function isReturn(): ?bool
     {
         return $this->return;
     }
@@ -502,7 +502,7 @@ class Ride implements Entity
     /**
      * @return bool
      */
-    public function isFreeSeating(): bool
+    public function getFreeSeating(): ?bool
     {
         return $this->freeSeating;
     }
