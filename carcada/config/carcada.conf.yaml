@@ -6,20 +6,20 @@ cnf_token_name: x-token
 
 cnf_token_algorithm: HS256
 
-cnf_authentication_url: user/login
+cnf_authentication_url: /user/login
 
-cnf_user_param_name: user
+cnf_user_param_name: email
 
 cnf_pw_param_name: password
 
-auth_user_entity: legaltech\User
+auth_user_entity: carcada\user\User
 
-auth_user_specification: legaltech\User
+auth_user_specification: carcada\user\UserAuthenticationSpecification
 
 auth_public_resources:
-  - /api/exercises
+ -
 
-auth_enabled: false
+auth_enabled: true
 
 default_page_size: 20
 

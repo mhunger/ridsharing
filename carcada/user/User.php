@@ -10,6 +10,7 @@ namespace carcada\user;
 
 
 use taurus\framework\db\Entity;
+use taurus\framework\security\AuthenticationResource;
 
 /**
  * Class User
@@ -22,8 +23,11 @@ use taurus\framework\db\Entity;
  *  type="object"
  * )
  */
-class User implements Entity
+class User implements Entity, AuthenticationResource
 {
+
+    const USER_TABLE_NAME = 'user';
+
     /**
      * @var int
      * @Id
@@ -43,6 +47,7 @@ class User implements Entity
     /**
      * @var string
      * @Column(name="password")
+     * @PasswordHash(algo="PASSWORD_BCRYPT", cost="12")
      * @SWG\Property()
      */
     public $password;
@@ -210,7 +215,4 @@ class User implements Entity
     {
         $this->language = $language;
     }
-
-
-
 }

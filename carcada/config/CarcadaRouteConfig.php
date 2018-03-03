@@ -10,9 +10,11 @@ namespace carcada\config;
 
 
 use carcada\ride\Ride;
+use carcada\user\Car;
 use carcada\user\User;
 use taurus\framework\api\ApiBuilder;
 use taurus\framework\routing\AbstractRouteConfig;
+use taurus\framework\routing\Request;
 
 class CarcadaRouteConfig extends AbstractRouteConfig
 {
@@ -51,13 +53,37 @@ class CarcadaRouteConfig extends AbstractRouteConfig
          *     )
          * )
          */
-
-            ->addDefaultRoute(
+        ->addDefaultRoute(
             $this->apiBuilder->cget(Ride::class)
-        )->addDefaultRoute(
+        )/**
+         * @SWG\Post(
+         *     path="/rides",
+         *     operationId="postRide",
+         *     description="Creates a new Ride",
+         *     produces={"application/json"},
+         *     consumes={"application/json"},
+         *     @SWG\Parameter(
+         *         name="body",
+         *         in="body",
+         *         description="Pet object that needs to be added to the store",
+         *         required=true,
+         *         @SWG\Schema(ref="#/definitions/Ride"),
+         *     @SWG\Response(
+         *         response=201,
+         *         description="Ride Created",
+         *         @SWG\Schema(ref="#/definitions/Ride")
+         *     )
+         * )
+         */
+        ->addDefaultRoute(
             $this->apiBuilder->post(Ride::class)
         )->addDefaultRoute(
             $this->apiBuilder->get(Ride::class)
+        )->addDefaultRoute(
+            $this->apiBuilder->cget(Car::class))
+        ->addDefaultRoute(
+            $this->apiBuilder->buildAuthenticationRoute(Request::HTTP_POST, '/user/login')
         );
+
     }
 }
