@@ -24,8 +24,15 @@ You will need to add an entry into your `/etc/hosts` file with the hostname from
 ```
 vagrant up
 ```
+## Create database schema
+```
+vendor/bin/phinx migrate
+```
 
-
+## Seed the Database
+```
+vendor/bin/phinx seed:run
+```
 
 ## Known issues
 - Swagger installation is not working at the moment
