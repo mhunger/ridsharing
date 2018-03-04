@@ -42,3 +42,23 @@ vendor/bin/phinx seed:run
 - `zip` and `unzip` to system tools
 - run phinx (`phinx install`?) after at the end to init DB
 - set php.in and my.cnf to UTF8 to be able to use special characters in the data
+
+# Backend Info #
+## Authentication ##
+
+### Login ###
+
+| Name | Value |
+| ------ | ------ |
+| URL | /user/login |
+| Method | POST |
+| Body | application/json |
+| Parameters | email, password |
+
+*Example*
+```
+POST http://carcada.local/user/login HTTP/1.0
+{
+  "email": "myemail@g.com",
+  "password": "yourpassword"
+}
