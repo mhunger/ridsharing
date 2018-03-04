@@ -57,8 +57,33 @@ vendor/bin/phinx seed:run
 
 *Example*
 ```
-POST http://carcada.local/user/login HTTP/1.0
+Request: 
+POST carcada.local/user/login HTTP/1.0
 {
   "email": "myemail@g.com",
   "password": "yourpassword"
 }
+
+Response: 
+x-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhZ3VzdGluNzBAYmVlci5iaXoiLCJwYXNzd29yZCI6IiQyeSQxMiRkV1VocDc3RUZNTDZBVEpPV09JNTUub2RVZ1BibWx5cGJFaGtzdFdBLkU3QU9tUkxuaUpKZSIsImZpcnN0bmFtZSI6IldpbGJlcnQiLCJsYXN0bmFtZSI6Ild5bWFuIiwiaW1nIjpudWxsLCJ1c2VyUmF0aW5nIjoyLCJsYW5ndWFnZSI6IndhIn0.160GhOJbmmoszqVrmg1rVrpdVFTuaDR8Xu6_wzn_GHc
+{
+    "id": 1,
+    "email": "agustin70@beer.biz",
+    "password": "$2y$12$dWUhp77EFML6ATJOWOI55.odUgPbmlypbEhkstWA.E7AOmRLniJJe",
+    "firstname": "Wilbert",
+    "lastname": "Wyman",
+    "img": null,
+    "userRating": 2,
+    "language": "wa"
+}
+```
+
+
+### Authentication ###
+Authorisation on all channels but the public ones and the login channel are secured through token. The token has to be passed as a header and the name is x-token. 
+
+*Example*
+
+```
+GET /api/rides HTTP/1.0
+x-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhZ3VzdGluNzBAYmVlci5iaXoiLCJwYXNzd29yZCI6IiQyeSQxMiRkV1VocDc3RUZNTDZBVEpPV09JNTUub2RVZ1BibWx5cGJFaGtzdFdBLkU3QU9tUkxuaUpKZSIsImZpcnN0bmFtZSI6IldpbGJlcnQiLCJsYXN0bmFtZSI6Ild5bWFuIiwiaW1nIjpudWxsLCJ1c2VyUmF0aW5nIjoyLCJsYW5ndWFnZSI6IndhIn0.160GhOJbmmoszqVrmg1rVrpdVFTuaDR8Xu6_wzn_GHc
