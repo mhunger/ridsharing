@@ -4,7 +4,16 @@
     "type": "",
     "from": "Muenchen",
     "to": "Karlsruhe",
-    "offeredBy": null,
+    "offeredBy": {
+      "id": 1,
+      "email": "agustin70@beer.biz",
+      "password": "$2y$12$dWUhp77EFML6ATJOWOI55.odUgPbmlypbEhkstWA.E7AOmRLniJJe",
+      "firstname": "Michael",
+      "lastname": "Hunger",
+      "img": "profile.jpg",
+      "userRating": 4.6,
+      "language": "Deutsch"
+    },
     "stops": [
       {
         "id": 1,
@@ -43,7 +52,16 @@
     "type": "",
     "from": "Munich",
     "to": "Karlsruhe",
-    "offeredBy": null,
+    "offeredBy": {
+      "id": 1,
+      "email": "agustin70@beer.biz",
+      "password": "$2y$12$dWUhp77EFML6ATJOWOI55.odUgPbmlypbEhkstWA.E7AOmRLniJJe",
+      "firstname": "Michael",
+      "lastname": "Hunger",
+      "img": "profile.jpg",
+      "userRating": 4.6,
+      "language": "Deutsch"
+    },
     "stops": [],
     "travelDay": "2017-01-01 00:00:00",
     "arrivalTime": "2017-01-01 14:00:00",
@@ -76,7 +94,16 @@
     "type": "",
     "from": "Munich",
     "to": "Stuttgart",
-    "offeredBy": null,
+    "offeredBy": {
+      "id": 1,
+      "email": "agustin70@beer.biz",
+      "password": "$2y$12$dWUhp77EFML6ATJOWOI55.odUgPbmlypbEhkstWA.E7AOmRLniJJe",
+      "firstname": "Michael",
+      "lastname": "Hunger",
+      "img": "profile.jpg",
+      "userRating": 4.6,
+      "language": "Deutsch"
+    },
     "stops": [],
     "travelDay": "2017-06-22 13:00:00",
     "arrivalTime": "2017-06-22 14:30:00",

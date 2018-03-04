@@ -19,13 +19,13 @@ class RideListTest extends AbstractCarcadaDatabaseTest
     {
         return [
             'rides.xml',
-            'ride_stop.xml'
+            'ride_stop.xml',
+            'users.xml'
         ];
     }
 
     public function testRideList()
     {
-
         /** @var MockServer $mockServer */
         $mockServer = Container::getInstance()
             ->getService(TaurusContainerConfig::SERVICE_MOCK_SERVER);
@@ -33,7 +33,11 @@ class RideListTest extends AbstractCarcadaDatabaseTest
         $actualResponse = $mockServer->get(
             '/api/rides',
             'GET',
-            []
+            [],
+            [],
+            [
+                'x-token' => $this->login()->getEncodedTokenString()
+            ]
         );
 
         $this->compareResultToFixture(

@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <database name="taurus_test">
-        <table_data name="exercise">
+        <table_data name="user">
             <row>
                 <field name="id">1</field>
-                <field name="email">m.hunger@carcada.com</field>
-                <field name="password">abc1234</field>
+                <field name="email">agustin70@beer.biz</field>
+                <field name="password">$2y$12$dWUhp77EFML6ATJOWOI55.odUgPbmlypbEhkstWA.E7AOmRLniJJe</field>
                 <field name="last_name">Hunger</field>
                 <field name="first_name">Michael</field>
                 <field name="img">profile.jpg</field>
