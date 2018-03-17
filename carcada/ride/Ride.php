@@ -29,6 +29,8 @@ use taurus\framework\annotation\OneToOne;
 class Ride implements Entity
 {
 
+    const RIDE_TABLE = 'ride';
+
     /**
      * @var int
      * @Column(name="id")

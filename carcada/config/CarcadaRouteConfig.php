@@ -10,6 +10,7 @@ namespace carcada\config;
 
 
 use carcada\ride\Ride;
+use carcada\ride\RideFilterSpecification;
 use carcada\user\Car;
 use carcada\user\User;
 use taurus\framework\api\ApiBuilder;
@@ -80,10 +81,11 @@ class CarcadaRouteConfig extends AbstractRouteConfig
         )->addDefaultRoute(
             $this->apiBuilder->get(Ride::class)
         )->addDefaultRoute(
-            $this->apiBuilder->cget(Car::class))
-        ->addDefaultRoute(
+            $this->apiBuilder->cget(Car::class)
+        )->addDefaultRoute(
             $this->apiBuilder->buildAuthenticationRoute(Request::HTTP_POST, '/user/login')
+        )->addDefaultRoute(
+            $this->apiBuilder->cgetBySpec(Ride::class, RideFilterSpecification::class, '/ridesearch')
         );
-
     }
 }

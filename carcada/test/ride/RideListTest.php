@@ -47,4 +47,30 @@ class RideListTest extends AbstractCarcadaDatabaseTest
         );
 
     }
+
+    public function testRideFilterFrom()
+    {
+        /** @var MockServer $mockServer */
+        $mockServer = Container::getInstance()
+            ->getService(TaurusContainerConfig::SERVICE_MOCK_SERVER);
+
+        $actualResponse = $mockServer->get(
+            '/api/ridesearch',
+            'GET',
+            [
+                'from' => 'mun'
+            ],
+            [],
+            [
+                'x-token' => $this->login()->getEncodedTokenString()
+            ]
+        );
+
+        $this->compareResultToFixture(
+            $actualResponse,
+            __FUNCTION__,
+            'Could not get all resources for rides through the standard api controller'
+        );
+
+    }
 }
