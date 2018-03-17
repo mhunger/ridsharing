@@ -17,7 +17,7 @@ class UserAuthenticationSpecification implements Specification
 
     /**
      * @var string
-     * @Spec(column="email", type="string")
+     * @Spec(column="email", filterType="equals", argumentType="string")
      */
     private $email;
 
