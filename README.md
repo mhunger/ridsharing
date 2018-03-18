@@ -108,4 +108,4 @@ Parameters:
 
 *Example*
 ```
-GET /api/ridesearch HTTP/1.0
+GET /api/ridesearch?from=Mu&to=&travelDay=2019-01-01 HTTP/1.0
