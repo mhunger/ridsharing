@@ -104,6 +104,7 @@ Parameters:
 | from | string | Pattern | Karlsruhe |
 | to | string | Pattern | Mü |
 | travelDay | date | Match | 2019-01-01 |
+| seats | integer | >= | 2 |
 
 
 *Example*
