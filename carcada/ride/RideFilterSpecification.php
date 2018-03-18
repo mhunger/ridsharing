@@ -40,6 +40,12 @@ class RideFilterSpecification implements Specification
      */
     private $travelDay;
 
+    /**
+     * @var int
+     * @Spec(column="seats", filterType="greaterthanequals", argumentType="number")
+     */
+    private $seats;
+
     /** @var string */
     private $rideType;
 
@@ -48,9 +54,6 @@ class RideFilterSpecification implements Specification
 
     /** @var bool */
     private $freeSeating;
-
-    /** @var bool */
-    private $seats;
 
     /** @var bool */
     private $womenOnly;
@@ -69,18 +72,22 @@ class RideFilterSpecification implements Specification
 
     /**
      * RideFilterSpecification constructor.
+     *
      * @param string $from
      * @param null|string $to
      * @param null|string $travelDay
+     * @param int $seats
      */
     public function __construct(
         string $from = null,
         string $to = null,
-        string $travelDay = null
+        string $travelDay = null,
+        int $seats = null
     ) {
         $this->from = $from;
         $this->to = $to;
         $this->travelDay = $travelDay;
+        $this->seats = $seats;
     }
 
 
@@ -111,5 +118,13 @@ class RideFilterSpecification implements Specification
     public function getTravelDay(): ?string
     {
         return $this->travelDay;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getSeats(): ?int
+    {
+        return $this->seats;
     }
 }

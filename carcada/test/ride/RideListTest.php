@@ -85,7 +85,8 @@ class RideListTest extends AbstractCarcadaDatabaseTest
             [
                 'from' => 'mu',
                 'to' => 'K',
-                'travelDay' => '2017-06-21'
+                'travelDay' => '2017-06-21',
+                'seats' => 1
             ],
             [],
             [

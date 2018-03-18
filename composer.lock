@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "762098448d1025fd0dc2b05cb138f87b",
-    "content-hash": "783debc63b5ca6fc58cccb101d2f9f0e",
+    "hash": "456198bb5f54acb261b0674f96ed10f8",
+    "content-hash": "04392d385f8a5c910883a2ea0089c78e",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -227,16 +227,16 @@
         },
         {
             "name": "mike/taurus-framework",
-            "version": "v1.1.6rc",
+            "version": "v1.1.7rc",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mhunger/taurus.git",
-                "reference": "0e1826c383cacf68eab32e181334e58adc174dc1"
+                "reference": "9524006dc0775ce9253128968bc5ebde4e04c275"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mhunger/taurus/zipball/0e1826c383cacf68eab32e181334e58adc174dc1",
-                "reference": "0e1826c383cacf68eab32e181334e58adc174dc1",
+                "url": "https://api.github.com/repos/mhunger/taurus/zipball/9524006dc0775ce9253128968bc5ebde4e04c275",
+                "reference": "9524006dc0775ce9253128968bc5ebde4e04c275",
                 "shasum": ""
             },
             "require": {
@@ -256,7 +256,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "A framework for building REST API based backends",
-            "time": "2018-03-17 12:54:56"
+            "time": "2018-03-18 16:09:05"
         },
         {
             "name": "psr/log",
