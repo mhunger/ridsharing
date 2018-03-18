@@ -87,7 +87,7 @@ Authorisation on all channels but the public ones and the login channel are secu
 ```
 GET /api/rides HTTP/1.0
 x-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZW1haWwiOiJhZ3VzdGluNzBAYmVlci5iaXoiLCJwYXNzd29yZCI6IiQyeSQxMiRkV1VocDc3RUZNTDZBVEpPV09JNTUub2RVZ1BibWx5cGJFaGtzdFdBLkU3QU9tUkxuaUpKZSIsImZpcnN0bmFtZSI6IldpbGJlcnQiLCJsYXN0bmFtZSI6Ild5bWFuIiwiaW1nIjpudWxsLCJ1c2VyUmF0aW5nIjoyLCJsYW5ndWFnZSI6IndhIn0.160GhOJbmmoszqVrmg1rVrpdVFTuaDR8Xu6_wzn_GHc
-
+```
 
 ### Filtering ###
 
@@ -100,10 +100,12 @@ Method: GET
 Parameters:
 
 | Name | Parameter Type | Filter Type |  Example |
-|------|------|------|------|
+| ------ | ------ | ------ | ------ |
 | from | string | Pattern | Karlsruhe |
 | to | string | Pattern | Mü |
-| travel_day | date | Match | 2019-01-01 |
+| travelDay | date | Match | 2019-01-01 |
 
 
-
+*Example*
+```
+GET /api/ridesearch HTTP/1.0
