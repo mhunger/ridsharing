@@ -20,16 +20,24 @@ class RideFilterSpecification implements Specification
      */
     private $from;
 
-    /** @var string */
+    /**
+     * @var string
+     */
     private $fromRadius;
 
-    /** @var string */
+    /**
+     * @var string
+     * @Spec(column="to", filterType="like", argumentType="string")
+     */
     private $to;
 
     /** @var string */
     private $toRadius;
 
-    /** @var string */
+    /**
+     * @var string
+     * @Spec(column="travel_day", filterType="like", argumentType="string")
+     */
     private $travelDay;
 
     /** @var string */
@@ -61,51 +69,18 @@ class RideFilterSpecification implements Specification
 
     /**
      * RideFilterSpecification constructor.
-     * @param $from
-     * @param $fromRadius
-     * @param $to
-     * @param $toRadius
-     * @param $travelDay
-     * @param $rideType
-     * @param $price
-     * @param $freeSeating
-     * @param $seats
-     * @param $womenOnly
-     * @param $pets
-     * @param $baggageSize
-     * @param $immediateBooking
-     * @param $payment
+     * @param string $from
+     * @param null|string $to
+     * @param null|string $travelDay
      */
     public function __construct(
-        $from = null/*,
-        $fromRadius = null,
-        $to = null,
-        $toRadius = null,
-        $travelDay = null,
-        $rideType = null,
-        $price = null,
-        $freeSeating = null,
-        $seats = null,
-        $womenOnly = null,
-        $pets = null,
-        $baggageSize = null,
-        $immediateBooking = null,
-        $payment = null*/
+        string $from = null,
+        string $to = null,
+        string $travelDay = null
     ) {
         $this->from = $from;
-/*        $this->fromRadius = $fromRadius;
         $this->to = $to;
-        $this->toRadius = $toRadius;
         $this->travelDay = $travelDay;
-        $this->rideType = $rideType;
-        $this->price = $price;
-        $this->freeSeating = $freeSeating;
-        $this->seats = $seats;
-        $this->womenOnly = $womenOnly;
-        $this->pets = $pets;
-        $this->baggageSize = $baggageSize;
-        $this->immediateBooking = $immediateBooking;
-        $this->payment = $payment;*/
     }
 
 
@@ -120,5 +95,21 @@ class RideFilterSpecification implements Specification
     public function getFrom(): ?string
     {
         return $this->from;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTo(): ?string
+    {
+        return $this->to;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTravelDay(): ?string
+    {
+        return $this->travelDay;
     }
 }
