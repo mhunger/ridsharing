@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @Component({
     selector: 'date-picker-field',

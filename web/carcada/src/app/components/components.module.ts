@@ -4,6 +4,10 @@ import { DatePickerFieldComponent } from './form-fields/date-picker-fields/date-
 import { MapsAutocompleteDirective } from './directives/maps-autocomplete.directive';
 import { NgModule } from '@angular/core'
 import { MatDialogModule } from '@angular/material'
+import { MatInputModule, MatFormFieldModule } from '@angular/material'
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { MatDatepickerModule } from '@angular/material/datepicker'
+import { MatDatepickerIntl, MAT_DATEPICKER_SCROLL_STRATEGY_PROVIDER } from '@angular/material/datepicker';
 
 @NgModule({
     declarations: [
@@ -15,14 +19,20 @@ import { MatDialogModule } from '@angular/material'
     imports: [
         CommonModule,
         MatDialogModule,
-    ],
-    entryComponents: [
-        RadiusSelectionList,
-    ],
+        MatDatepickerModule,
+        MatMomentDateModule,
+        MatInputModule,
+        MatFormFieldModule,
+        ],
+    entryComponents: [],
     exports: [
         LocationFieldComponent,
         DatePickerFieldComponent,
         MapsAutocompleteDirective,
     ],
+    providers: [
+        MatDatepickerIntl,
+        MAT_DATEPICKER_SCROLL_STRATEGY_PROVIDER,
+    ]
 })
 export class ComponentsModule {}
