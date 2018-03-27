@@ -10,6 +10,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDatepickerModule } from '@angular/material/datepicker'
 import { MatDatepickerIntl, MAT_DATEPICKER_SCROLL_STRATEGY_PROVIDER } from '@angular/material/datepicker';
 import { ToggleFieldComponent } from './form-fields/toggle-field/toggle-field.component';
+import { CounterFieldComponent } from './form-fields/counter-field/counter-field.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
     declarations: [
@@ -18,6 +20,7 @@ import { ToggleFieldComponent } from './form-fields/toggle-field/toggle-field.co
         MapsAutocompleteDirective,
         RadiusSelectionList,
         ToggleFieldComponent,
+        CounterFieldComponent,
     ],
     imports: [
         CommonModule,
@@ -27,6 +30,7 @@ import { ToggleFieldComponent } from './form-fields/toggle-field/toggle-field.co
         MatInputModule,
         MatFormFieldModule,
         MatSlideToggleModule,
+        MatButtonModule,
     ],
     entryComponents: [],
     exports: [
@@ -34,6 +38,7 @@ import { ToggleFieldComponent } from './form-fields/toggle-field/toggle-field.co
         DatePickerFieldComponent,
         MapsAutocompleteDirective,
         ToggleFieldComponent,
+        CounterFieldComponent,
     ],
     providers: [
         MatDatepickerIntl,
