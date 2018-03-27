@@ -1,6 +1,10 @@
 import { Directive, ElementRef } from '@angular/core';
 import { IAutocomplete } from '../../interfaces/services/GoogleMaps';
 
+/**
+ * Autocomplete mechanism for textfield
+ * based on Google Maps web service
+ */
 @Directive({
     selector: '[mapsAutocomplete]',
 })
