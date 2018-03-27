@@ -12,6 +12,7 @@ import { MatDatepickerIntl, MAT_DATEPICKER_SCROLL_STRATEGY_PROVIDER } from '@ang
 import { ToggleFieldComponent } from './form-fields/toggle-field/toggle-field.component';
 import { CounterFieldComponent } from './form-fields/counter-field/counter-field.component';
 import { MatButtonModule } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @NgModule({
     declarations: [
@@ -31,6 +32,7 @@ import { MatButtonModule } from '@angular/material/button';
         MatFormFieldModule,
         MatSlideToggleModule,
         MatButtonModule,
+        MatButtonToggleModule,
     ],
     entryComponents: [],
     exports: [
@@ -39,6 +41,7 @@ import { MatButtonModule } from '@angular/material/button';
         MapsAutocompleteDirective,
         ToggleFieldComponent,
         CounterFieldComponent,
+        MatButtonToggleModule,
     ],
     providers: [
         MatDatepickerIntl,

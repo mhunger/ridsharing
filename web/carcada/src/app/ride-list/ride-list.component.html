@@ -5,6 +5,30 @@
   <counter-field label="Anzahl Mitfahrer" minimum="1" maximum="3" value="{{1}}"></counter-field>
   <toggle-field label="Sitzplatzreservierung" description="Lorem ipsum dolor sit amet dolor sit amet"></toggle-field>
   <toggle-field label="Sofortbuchung" description="Lorem ipsum dolor sit amet dolor sit amet"></toggle-field>
+  <counter-field label="Freie Sitzplätze" minimum="1" maximum="6" value="{{1}}"></counter-field>
+  <div style="padding: 1em 0;">
+    <div style="font-weight: bold;">Bezahlung</div>
+    <mat-button-toggle-group multiple="true">
+      <mat-button-toggle value="online">Onlinezahlung</mat-button-toggle>
+      <mat-button-toggle value="cash">Bargeldzahlung</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  <div style="padding: 1em 0;">
+    <div style="font-weight: bold;">Während der Fahrt</div>
+    <mat-button-toggle-group multiple="true">
+      <mat-button-toggle value="woman_only">Woman Only</mat-button-toggle>
+      <mat-button-toggle value="animals_allowed">Tiere Erlaubt</mat-button-toggle>
+      <mat-button-toggle value="smoking_allowed">Rauchen Erlaubt</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  <div style="padding: 1em 0;">
+    <div style="font-weight: bold;">Gepäck</div>
+    <mat-button-toggle-group multiple="true">
+      <mat-button-toggle value="small">Klein (S)</mat-button-toggle>
+      <mat-button-toggle value="medium">Mittel (M)</mat-button-toggle>
+      <mat-button-toggle value="large">Groß (L)</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
 </div>
 <div class="ride-filter-shadow" [class.show]="isFilterFormVisible" (click)="toggleFilterForm()"><!-- empty --></div>
 <div class="ride-filter-summary-container" (click)="toggleFilterForm()">
@@ -27,9 +51,9 @@
       <div class="row details">
         <div class="col-xs-12">
           <div class="row main">
-            <div class="col-xs-4">{{ride.travelDay | date: "d.MM.y"}}</div>
+            <div class="col-xs-4">{{ride.travelDay}}</div>
             <div class="col-xs-4">{{ride.seats}} Plätze frei</div>
-            <div class="col-xs-4">{{ride.travelDay | date: "hh:mm"}}</div>
+            <div class="col-xs-4">{{ride.travelDay}}</div>
           </div>
           <div class="row features">
             <div class="col-xs-6"><span class="icon payment-cash"></span> Barzahlung</div>
