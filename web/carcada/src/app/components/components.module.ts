@@ -13,6 +13,7 @@ import { ToggleFieldComponent } from './form-fields/toggle-field/toggle-field.co
 import { CounterFieldComponent } from './form-fields/counter-field/counter-field.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
     declarations: [
@@ -33,6 +34,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
         MatSlideToggleModule,
         MatButtonModule,
         MatButtonToggleModule,
+        MatSliderModule,
     ],
     entryComponents: [],
     exports: [
@@ -42,6 +44,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
         ToggleFieldComponent,
         CounterFieldComponent,
         MatButtonToggleModule,
+        MatSliderModule,
     ],
     providers: [
         MatDatepickerIntl,
