@@ -36,7 +36,9 @@ import { MatSliderModule } from '@angular/material/slider';
         MatButtonToggleModule,
         MatSliderModule,
     ],
-    entryComponents: [],
+    entryComponents: [
+        RadiusSelectionList,
+    ],
     exports: [
         LocationFieldComponent,
         DatePickerFieldComponent,
