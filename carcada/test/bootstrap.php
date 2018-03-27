@@ -8,6 +8,9 @@
 
 use carcada\config\CarcadaContainerConfig;
 use carcada\config\CarcadaTestContainerConfig;
+use Phinx\Console\PhinxApplication;
+use Symfony\Component\Console\Input\StringInput;
+use Symfony\Component\Console\Output\NullOutput;
 use taurus\framework\config\TaurusConfig;
 use taurus\framework\config\TaurusContainerConfig;
 use taurus\framework\Container;
@@ -30,6 +33,20 @@ Container::getInstance()->setContainerConfig($config);
 /** @var TaurusConfig $taurusConfig */
 $taurusConfig = Container::getInstance()->getService(TaurusContainerConfig::SERVICE_TAURUS_CONFIG);
 $taurusConfig->loadUserConfigFromYaml(file_get_contents('../config/carcada.conf.yaml'));
+
+/**
+ * Setup the database
+ * - drop carcada_test database
+ * - create carcada_test database
+ * - run the migrations
+ */
 /** @var \taurus\framework\db\mysql\MySqlConnection $mysql */
 $mysql = \taurus\framework\Container::getInstance()->getService(TaurusContainerConfig::SERVICE_MYSQL_CONNECTION);
-system('mysql --user=carcada --password=carcada carcada_test < carcada-test-schema.sql');
+
+$mysql->executeRaw('CREATE DATABASE IF NOT EXISTS carcada_test ');
+
+/** run migrations to create db structure */
+$app = new PhinxApplication();
+$app->setAutoExit(false);
+$app->run(new StringInput('migrate -e testing -c ../../phinx.yml'), new NullOutput());
+unset($app);

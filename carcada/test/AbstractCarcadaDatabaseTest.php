@@ -58,8 +58,8 @@ abstract class AbstractCarcadaDatabaseTest extends AbstractDatabaseTest
         $mockRequest = Container::getInstance()->getService(TaurusContainerConfig::SERVICE_MOCK_REQUEST);
         $mockRequest->setInputBody(
             [
-                'username' => 'mike',
-                'password' => 'mike123'
+                'email' => 'agustin70@beer.biz',
+                'password' => 'test123#'
             ]
         )->setUrl('/user/login')
             ->setMethod(Request::HTTP_POST);

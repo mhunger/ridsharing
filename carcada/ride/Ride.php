@@ -29,6 +29,8 @@ use taurus\framework\annotation\OneToOne;
 class Ride implements Entity
 {
 
+    const RIDE_TABLE = 'ride';
+
     /**
      * @var int
      * @Column(name="id")
@@ -178,6 +180,83 @@ class Ride implements Entity
      * @SWG\Property()
      */
     public $detour;
+
+    /**
+     * @var bool
+     * @Column(name="agb_agreed")
+     * @SWG\Property()
+     */
+    public $agbAgreed;
+
+    /**
+     * @var bool
+     * @Column(name="data_privacy_agreed")
+     * @SWG\Property()
+     */
+    public $dataPrivacyAgreed;
+
+    /**
+     * @var bool
+     * @Column(name="immediate_booking")
+     * @SWG\Property()
+     */
+    public $immediateBooking;
+
+    /**
+     * @var string
+     * @Column(name="payment")
+     * @SWG\Property()
+     */
+    public $payment;
+
+    /**
+     * @var bool
+     * @Column(name="passenger_seat_reserved")
+     * @SWG\Property()
+     */
+    public $passengerSeatReserved;
+
+    /**
+     * @var bool
+     * @Column(name="back_seat_left_reserved")
+     * @SWG\Property()
+     */
+    public $backSeatLeftReserved;
+
+    /**
+     * @var bool
+     * @Column(name="back_seat_right_reserved")
+     * @SWG\Property()
+     */
+    public $backSeatRightReserved;
+
+    /**
+     * @var bool
+     * @Column(name="back_seat_middle_reserved")
+     * @SWG\Property()
+     */
+    public $backSeatMiddleReserved;
+
+    /**
+     * @var bool
+     * @Column(name="third_row_left_reserved")
+     * @SWG\Property()
+     */
+    public $thirdRowLeftReserved;
+
+    /**
+     * @var bool
+     * @Column(name="third_row_right_reserved")
+     * @SWG\Property()
+     */
+    public $thirdRowRightReserved;
+
+    /**
+     * @var bool
+     * @Column(name="third_row_middle_reserved")
+     * @SWG\Property()
+     */
+    public $thirdRowMiddleReserved;
 
     /**
      * @return int
@@ -374,7 +453,7 @@ class Ride implements Entity
     /**
      * @return bool
      */
-    public function isPet(): ?bool
+    public function getPet(): ?bool
     {
         return $this->pet;
     }
@@ -390,7 +469,7 @@ class Ride implements Entity
     /**
      * @return bool
      */
-    public function isTwoseats(): ?bool
+    public function getTwoseats(): ?bool
     {
         return $this->twoseats;
     }
@@ -406,7 +485,7 @@ class Ride implements Entity
     /**
      * @return bool
      */
-    public function isWoman(): ?bool
+    public function getWoman(): ?bool
     {
         return $this->woman;
     }
@@ -422,7 +501,7 @@ class Ride implements Entity
     /**
      * @return bool
      */
-    public function isSmoker(): ?bool
+    public function getSmoker(): ?bool
     {
         return $this->smoker;
     }
@@ -486,7 +565,7 @@ class Ride implements Entity
     /**
      * @return bool
      */
-    public function isReturn(): ?bool
+    public function getReturn(): ?bool
     {
         return $this->return;
     }
@@ -513,5 +592,181 @@ class Ride implements Entity
     public function setFreeSeating(bool $freeSeating)
     {
         $this->freeSeating = $freeSeating;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getAgbAgreed(): ?bool
+    {
+        return $this->agbAgreed;
+    }
+
+    /**
+     * @param bool $agbAgreed
+     */
+    public function setAgbAgreed(bool $agbAgreed = null)
+    {
+        $this->agbAgreed = $agbAgreed;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getDataPrivacyAgreed(): ?bool
+    {
+        return $this->dataPrivacyAgreed;
+    }
+
+    /**
+     * @param bool $dataPrivacyAgreed
+     */
+    public function setDataPrivacyAgreed(bool $dataPrivacyAgreed = null)
+    {
+        $this->dataPrivacyAgreed = $dataPrivacyAgreed;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getImmediateBooking(): ?bool
+    {
+        return $this->immediateBooking;
+    }
+
+    /**
+     * @param bool $immediateBooking
+     */
+    public function setImmediateBooking(bool $immediateBooking = null)
+    {
+        $this->immediateBooking = $immediateBooking;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPayment(): string
+    {
+        return $this->payment;
+    }
+
+    /**
+     * @param string $payment
+     */
+    public function setPayment(string $payment)
+    {
+        $this->payment = $payment;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getPassengerSeatReserved(): ?bool
+    {
+        return $this->passengerSeatReserved;
+    }
+
+    /**
+     * @param bool $passengerSeatReserved
+     */
+    public function setPassengerSeatReserved(bool $passengerSeatReserved = null)
+    {
+        $this->passengerSeatReserved = $passengerSeatReserved;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getBackSeatLeftReserved(): ?bool
+    {
+        return $this->backSeatLeftReserved;
+    }
+
+    /**
+     * @param bool $backSeatLeftReserved
+     */
+    public function setBackSeatLeftReserved(bool $backSeatLeftReserved = null)
+    {
+        $this->backSeatLeftReserved = $backSeatLeftReserved;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getBackSeatRightReserved(): ?bool
+    {
+        return $this->backSeatRightReserved;
+    }
+
+    /**
+     * @param bool $backSeatRightReserved
+     */
+    public function setBackSeatRightReserved(bool $backSeatRightReserved = null)
+    {
+        $this->backSeatRightReserved = $backSeatRightReserved;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getBackSeatMiddleReserved(): ?bool
+    {
+        return $this->backSeatMiddleReserved;
+    }
+
+    /**
+     * @param bool $backSeatMiddleReserved
+     */
+    public function setBackSeatMiddleReserved(bool $backSeatMiddleReserved = null)
+    {
+        $this->backSeatMiddleReserved = $backSeatMiddleReserved;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getThirdRowLeftReserved(): ?bool
+    {
+        return $this->thirdRowLeftReserved;
+    }
+
+    /**
+     * @param bool $thirdRowLeftReserved
+     */
+    public function setThirdRowLeftReserved(bool $thirdRowLeftReserved = null)
+    {
+        $this->thirdRowLeftReserved = $thirdRowLeftReserved;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getThirdRowRightReserved(): ?bool
+    {
+        return $this->thirdRowRightReserved;
+    }
+
+    /**
+     * @param bool $thirdRowRightReserved
+     */
+    public function setThirdRowRightReserved(bool $thirdRowRightReserved = null)
+    {
+        $this->thirdRowRightReserved = $thirdRowRightReserved;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getThirdRowMiddleReserved(): ?bool
+    {
+        return $this->thirdRowMiddleReserved;
+    }
+
+    /**
+     * @param bool $thirdRowMiddleReserved
+     */
+    public function setThirdRowMiddleReserved(bool $thirdRowMiddleReserved = null)
+    {
+        $this->thirdRowMiddleReserved = $thirdRowMiddleReserved;
     }
 }

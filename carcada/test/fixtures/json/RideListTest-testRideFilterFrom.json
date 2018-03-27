@@ -1,53 +1,5 @@
 [
   {
-    "id": 1,
-    "type": "",
-    "from": "Muenchen",
-    "to": "Karlsruhe",
-    "offeredBy": {
-      "id": 1,
-      "email": "agustin70@beer.biz",
-      "password": "$2y$12$dWUhp77EFML6ATJOWOI55.odUgPbmlypbEhkstWA.E7AOmRLniJJe",
-      "firstname": "Michael",
-      "lastname": "Hunger",
-      "img": "profile.jpg",
-      "userRating": 4.6,
-      "language": "Deutsch"
-    },
-    "stops": [
-      {
-        "id": 1,
-        "rideId": 1,
-        "stopName": "N\u00fcrnberg"
-      }
-    ],
-    "travelDay": "2017-06-21 00:00:00",
-    "arrivalTime": "2017-06-21 00:00:00",
-    "return": true,
-    "freeSeating": true,
-    "seats": "5",
-    "price": "6.00",
-    "departureLocation": "HBF",
-    "description": "Normal Trip to Karlsruhe",
-    "pet": false,
-    "twoseats": false,
-    "woman": false,
-    "smoker": false,
-    "baggageSize": "",
-    "detour": "",
-    "agbAgreed": true,
-    "dataPrivacyAgreed": true,
-    "immediateBooking": true,
-    "payment": "ONLINE",
-    "passengerSeatReserved": true,
-    "backSeatLeftReserved": true,
-    "backSeatRightReserved": false,
-    "backSeatMiddleReserved": true,
-    "thirdRowLeftReserved": false,
-    "thirdRowRightReserved": false,
-    "thirdRowMiddleReserved": false
-  },
-  {
     "id": 2,
     "type": "",
     "from": "Munich",
