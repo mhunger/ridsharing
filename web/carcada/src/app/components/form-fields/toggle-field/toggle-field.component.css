@@ -1,0 +1,20 @@
+.toggle-field-container {
+    margin: 1em 0;
+}
+
+.label-container,
+.toggle-container {
+    width: 45%;
+    display: inline-block;
+}
+
+.label-container .label {
+    color: #000000;
+    font-size: 1em;
+    text-align: left;
+    padding: 0;
+}
+
+.toggle-container {
+    text-align: center;
+}
