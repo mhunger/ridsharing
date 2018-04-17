@@ -1,7 +1,0 @@
-$ip = "192.168.44.18"
-$host = "carcada-dev.com"
-$app = "carcada"
-$mysqlRootPassword = "carcada2017"
-$mysqlUser = "carcada"
-$mysqlPassword = "carcada"
-$mysqlDatabase = "carcada"
