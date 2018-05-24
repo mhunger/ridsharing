@@ -19,7 +19,7 @@ auth_user_specification: carcada\user\UserAuthenticationSpecification
 auth_public_resources:
  -
 
-auth_enabled: true
+auth_enabled: false
 
 default_page_size: 20
 
