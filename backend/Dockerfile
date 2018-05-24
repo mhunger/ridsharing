@@ -1,4 +1,27 @@
-FROM phillaf/php-mricg:latest
+FROM php:7.1.17-fpm-jessie
+
+RUN docker-php-ext-install pdo pdo_mysql mysqli
+
+RUN requirements="libicu-dev libicu52" \
+    && requirementsToRemove="libmcrypt-dev" \
+    && apt-get update && apt-get install -y $requirements \
+    && docker-php-ext-install intl \
+    && apt-get purge --auto-remove -y $requirementsToRemove \
+    && rm -rf /var/lib/apt/lists/*
+
+# Composer
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
+    && php composer-setup.php \
+    && php -r "unlink('composer-setup.php');" \
+    && mv composer.phar /usr/local/bin/composer
+
+# Zip
+RUN requirements="unzip zlib1g-dev" \
+    && requirementsToRemove="zlib1g-dev" \
+    && apt-get update && apt-get install -y $requirements \
+    && docker-php-ext-install zip \
+    && apt-get purge \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update \
         && apt-get install -y mysql-client \
