@@ -7,28 +7,28 @@ environments:
     default_database: development
     production:
         adapter: mysql
-        host: localhost
+        host: carcada_database
         name: carcada
         user: root
-        pass: 'carcada2017'
+        pass: ''
         port: 3306
         charset: utf8
 
     development:
         adapter: mysql
-        host: localhost
+        host: carcada_database
         name: carcada
         user: root
-        pass: 'carcada2017'
+        pass: ''
         port: 3306
         charset: utf8
 
     testing:
         adapter: mysql
-        host: localhost
+        host: carcada_database_service
         name: carcada_test
         user: root
-        pass: 'carcada2017'
+        pass: ''
         port: 3306
         charset: utf8
 

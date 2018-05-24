@@ -1,0 +1,30 @@
+server {
+	listen 80;
+	listen [::]:80;
+
+	server_name localhost;
+
+	root /var/www/html;
+	index index.php;
+
+	location / {
+		try_files $uri $uri/ =404;
+	}
+
+    # Routing for php files
+    location ~* \.php$ {
+        fastcgi_index   index.php;
+        fastcgi_pass    127.0.0.1:9000;
+        include         fastcgi_params;
+        fastcgi_param   SCRIPT_FILENAME    $document_root$fastcgi_script_name;
+        fastcgi_param   SCRIPT_NAME        $fastcgi_script_name;
+    }
+
+    # Prevent access to hidden files
+    location ~ /\. {
+        access_log off;
+        log_not_found off; 
+        deny all;
+    }
+
+}

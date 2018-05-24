@@ -26,7 +26,7 @@ class CarcadaContainerConfig extends AbstractContainerConfig
         $this->serviceDefinitions[TaurusContainerConfig::SERVICE_MYSQL_CONNECTION] =
             new ServiceConfig(TaurusContainerConfig::SERVICE_MYSQL_CONNECTION,
                 'MysqlConnection',
-                ['localhost', 'root', 'carcada2017', 'carcada', MySqlQueryStringBuilderImpl::class],
+                ['cacarda_database', 'root', null, null, MySqlQueryStringBuilderImpl::class],
                 true
             );
 
