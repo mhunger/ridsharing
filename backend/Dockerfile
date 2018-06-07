@@ -41,10 +41,14 @@ WORKDIR /var/www/html
 
 COPY ./nginx/localhost /etc/nginx/sites-available
 RUN ln -s /etc/nginx/sites-available/localhost /etc/nginx/sites-enabled/localhost \
-        && nginx -t
+        && nginx -t \
+        && echo "daemon off;" >> /etc/nginx/nginx.conf \
+        && echo "error_log /dev/stdout info;" >> /etc/nginx/nginx.conf
 
 COPY index.php .
 COPY src ./src
 
 COPY db ./db
 COPY phinx.yml .
+
+ENTRYPOINT [ "/usr/sbin/nginx" ]
