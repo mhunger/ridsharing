@@ -29,7 +29,10 @@ RUN apt-get update \
         && apt-get install -y libyaml-dev \
         && apt-get install -y vim
 
-COPY composer.json ./
+RUN mkdir /var/www/html/backend
+WORKDIR /var/www/html/backend
+
+COPY backend/composer.json ./
 RUN composer install
 
 COPY ./php/php.ini /usr/local/etc/php/
@@ -37,22 +40,20 @@ RUN pecl config-set php_ini /usr/local/etc/php/php.ini \
         && pecl install yaml \
         && echo "extension=yaml.so" >> /usr/local/etc/docker-php-ext-yaml.ini
 
-WORKDIR /var/www/html
-
 COPY ./nginx/localhost /etc/nginx/sites-available
 RUN ln -s /etc/nginx/sites-available/localhost /etc/nginx/sites-enabled/localhost \
         && nginx -t \
         && echo "error_log /dev/stdout info;" >> /etc/nginx/nginx.conf
 
-COPY index.php .
-COPY src ./src
+COPY backend/index.php .
+COPY backend/src ./src
 
-COPY db ./db
-COPY phinx.yml .
+COPY backend/db ./db
+COPY backend/phinx.yml .
 
 COPY run_services.sh /run_services.sh
 
 RUN ls -la / \
     && chmod 777 /run_services.sh
-#ENTRYPOINT [ "/usr/sbin/nginx" ]
+
 CMD /run_services.sh

@@ -17,7 +17,7 @@ docker exec -t carcada_backend nginx
 
 # Bootstrap database
 docker exec -t carcada_backend mysql -h carcada_database -e 'CREATE DATABASE carcada;'
-docker exec -t carcada_backend php vendor/bin/phinx migrate -e development
+docker exec -t carcada_backend php backend/vendor/bin/phinx migrate -e development
 # Todo: run seeder
 # docker exec -t carcada_backend php vendor/bin/phinx seed:run
 
