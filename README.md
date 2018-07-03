@@ -1,47 +1,16 @@
 # Installation
 
-## System requirements
-* ansible
-* vagrant
-* virtualbox
-
-On MacOs X, you can run:
-```
-$ brew install ansible
-$ brew casket install vagrant
-$ brew casket install virtualbox
-```
-
+## Requirements
+* Docker Community Edition ([link](https://www.docker.com/community-edition))
+* Bash shell for running the initial setup script
 
 ## Setup
-
-### Personalisation file
-Holds configuration, like hostname, IP address, etc.
-
-You will need to add an entry into your `/etc/hosts` file with the hostname from the Personalisation file that points to the IP written mentioned in the `Personalisation` file.
-
-### Start the virtual machine
-```
-vagrant up
-```
-## Create database schema
-```
-vendor/bin/phinx migrate
+If you are setting up the machine for the first time, please run
+```sh
+$ . setup.sh
 ```
 
-## Seed the Database
-```
-vendor/bin/phinx seed:run
-```
-
-## Known issues
-- Swagger installation is not working at the moment
-- mbstring PHP extension is missing on the machine
-- Add role to install composer
-- Run composer when provisioning
-- `zip` and `unzip` to system tools
-- run phinx (`phinx install`?) after at the end to init DB
-- set php.in and my.cnf to UTF8 to be able to use special characters in the data
+This will take a while because the database is initialised and then the app image is being build and launched.
 
 # Backend Info #
 ## Authentication ##
@@ -110,3 +79,15 @@ Parameters:
 *Example*
 ```
 GET /api/ridesearch?from=Mu&to=&travelDay=2019-01-01 HTTP/1.0
+```
+
+# Leftovers from the Vagrant setup
+
+## Known issues
+- Swagger installation is not working at the moment
+- mbstring PHP extension is missing on the machine
+- Add role to install composer
+- Run composer when provisioning
+- `zip` and `unzip` to system tools
+- run phinx (`phinx install`?) after at the end to init DB
+- set php.in and my.cnf to UTF8 to be able to use special characters in the data
