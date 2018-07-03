@@ -1,0 +1,28 @@
+cnf_secret_key: blabla
+
+cnf_token_type: header
+
+cnf_token_name: x-token
+
+cnf_token_algorithm: HS256
+
+cnf_authentication_url: /user/login
+
+cnf_user_param_name: email
+
+cnf_pw_param_name: password
+
+auth_user_entity: carcada\user\User
+
+auth_user_specification: carcada\user\UserAuthenticationSpecification
+
+auth_public_resources:
+ -
+
+auth_enabled: false
+
+default_page_size: 20
+
+page_size_param_name: pageSize
+
+page_param_name: page

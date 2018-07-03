@@ -1,7 +1,0 @@
-# Created by .ignore support plugin (hsz.mobi)
-/vendor/
-/.vagrant/
-/carcada.sql.zip
-Personalisation
-/carcada/test/fixtures/json/verify.json
-.DS_Store

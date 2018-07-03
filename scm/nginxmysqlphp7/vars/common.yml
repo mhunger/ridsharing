@@ -1,6 +1,0 @@
----
-    php_ppa: php
-    doc_root: "/var/www/{{ hostname }}"
-    dist: precise
-    appname: "{{ appname }}"
-    ip: "{{ ip }}"
