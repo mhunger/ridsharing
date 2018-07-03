@@ -45,7 +45,10 @@ import { SubmitButtonComponent } from "./shared/submit-button/submit-button.comp
         path: 'rides/create',
         component: RideFormComponent
       }
-    ])
+    ],
+    {
+      useHash: true,
+    })
   ],
   providers: [ RideService ],
   bootstrap: [ AppComponent ]
