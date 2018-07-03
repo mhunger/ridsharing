@@ -1,5 +1,16 @@
+## Build frontend
+FROM node:9.11-jessie as frontend-build
+
+COPY frontend /frontend-build
+
+WORKDIR /frontend-build
+RUN npm install \
+  && node_modules/.bin/ng build
+
+## Build backend and copy frontend
 FROM php:7.1.17-fpm-jessie
 
+### Build backend
 RUN docker-php-ext-install pdo pdo_mysql mysqli
 
 RUN requirements="libicu-dev libicu52" \
@@ -50,6 +61,10 @@ COPY backend/src ./src
 
 COPY backend/db ./db
 COPY backend/phinx.yml .
+
+### Copy frontend
+RUN mkdir /var/www/html/frontend
+COPY --from=frontend-build /frontend-build/dist /var/www/html/frontend
 
 COPY run_services.sh /run_services.sh
 
