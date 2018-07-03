@@ -6,11 +6,32 @@
 
 ## Setup
 If you are setting up the machine for the first time, please run
+
 ```sh
 $ . setup.sh
 ```
 
 This will take a while because the database is initialised and then the app image is being build and launched.
+
+
+## Manage the app
+
+After running `setup.sh`, there are two container running on your machine:
+* carcada_database
+* carcada_app
+
+### Stop a container
+```sh
+docker kill <container_name>
+```
+
+### Start a container
+Use the commands that are being used in `setup.sh`.
+
+**Note:**
+* Make sure that you launch the database container before the application container.
+* After launching the database, you need to initialise the database by running the commands at the end of  `setup.sh`
+
 
 # Backend Info #
 ## Authentication ##
