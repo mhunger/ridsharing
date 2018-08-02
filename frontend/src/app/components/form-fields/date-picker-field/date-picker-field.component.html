@@ -1,0 +1,10 @@
+<div>
+    <label>{{label}}</label>
+</div>
+<div class="input-container">
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker startView="year" [startAt]="startDate" startView="month"></mat-datepicker>
+    </mat-form-field>
+</div>

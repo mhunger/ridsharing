@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { RideDetailsComponent } from './ride-details/ride-details.component';
@@ -13,6 +14,8 @@ import { StarRating } from './shared/star-rating/star-rating.component';
 import { LayoutHeaderComponent } from "./shared/layout-header/layout-header.component";
 import { SubmitButtonComponent } from "./shared/submit-button/submit-button.component";
 
+import { ComponentsModule } from './components/components.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,12 +24,14 @@ import { SubmitButtonComponent } from "./shared/submit-button/submit-button.comp
     RideDetailsComponent,
     RideFormComponent,
     StarRating,
-    SubmitButtonComponent
+    SubmitButtonComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    ComponentsModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot([
       {
         path: '',
@@ -45,10 +50,7 @@ import { SubmitButtonComponent } from "./shared/submit-button/submit-button.comp
         path: 'rides/create',
         component: RideFormComponent
       }
-    ],
-    {
-      useHash: true,
-    })
+    ])
   ],
   providers: [ RideService ],
   bootstrap: [ AppComponent ]

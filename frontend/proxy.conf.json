@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "http://localhost:7070",
+    "target": "http://carcada-dev.com",
     "secure": false
   }
 }
