@@ -18,7 +18,7 @@ docker run --link carcada_database:mysql -p7070:80 --name carcada_app -d carcada
 # 1) creating a database
 docker exec -t carcada_app mysql -h carcada_database -e 'CREATE DATABASE carcada;'
 # 2) scaffolding tables
-docker exec -t carcada_app php backend/vendor/bin/phinx migrate -e development
+docker exec -t carcada_app php /var/www/html/backend/vendor/bin/phinx migrate -e development
 # TODO: run seeder to create mock data
 # docker exec -t carcada_app php vendor/bin/phinx seed:run
 
