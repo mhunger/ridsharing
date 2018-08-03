@@ -8,13 +8,9 @@ import { MatDialog, MatDialogRef } from '@angular/material';
 })
 export class LocationFieldComponent {
     @Input() label: string;
+    @Input() placeholderText: string = "Enter your location";
     @Input() radiusOption: boolean = false;
-
-    /**
-     * Search radius in kilometer
-     */
-    private radius: number = 1;
-
+    private radiusInKilometer: number = 1;
     private matDialog: MatDialog;
 
     constructor(matDialog: MatDialog) {
@@ -25,7 +21,7 @@ export class LocationFieldComponent {
         const dialogReference = this.matDialog.open(RadiusSelectionList);
         dialogReference.afterClosed().subscribe(result => {
             if (!result) return;
-            this.radius = result.radius;
+            this.radiusInKilometer = result.radius;
         });
     }
 }
