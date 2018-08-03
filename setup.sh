@@ -6,7 +6,7 @@ set -e
 
 # Start database
 # TODO: expose port to allow external connections
-docker run --name carcada_database -e MYSQL_ALLOW_EMPTY_PASSWORD=true -d mysql:5.7.22
+docker run --name carcada_database -e MYSQL_ALLOW_EMPTY_PASSWORD=true -p6033:3306 -d mysql:5.7.22
 
 # Prepare backend image
 docker build -t carcada_app .
