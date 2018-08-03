@@ -199,9 +199,3 @@ span.icon.down-arrow { background-image: url(/assets/rides/icons/down-arrow.jpg)
 .ride-filter-form .departure-destination-fields-container .column-right {
   width: 90%;
 }
-
-.ride-filter-form .departure-destination-fields-container .field-icons-container {
-  /* width: 20px;
-  height: 80px; */
-}
-
