@@ -187,3 +187,21 @@ span.icon.baggage { background-image: url(/assets/rides/icons/baggage.png); }
 span.icon.detour { background-image: url(/assets/rides/icons/detour.png); }
 span.icon.up-arrow { background-image: url(/assets/rides/icons/up-arrow.jpg); }
 span.icon.down-arrow { background-image: url(/assets/rides/icons/down-arrow.jpg); }
+
+
+.ride-filter-form .departure-destination-fields-container .column {
+  display: inline-block;
+}
+
+.ride-filter-form .departure-destination-fields-container .column-left {
+  width: 8%;
+}
+.ride-filter-form .departure-destination-fields-container .column-right {
+  width: 90%;
+}
+
+.ride-filter-form .departure-destination-fields-container .field-icons-container {
+  /* width: 20px;
+  height: 80px; */
+}
+
