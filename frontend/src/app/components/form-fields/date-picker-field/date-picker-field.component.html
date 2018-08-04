@@ -3,7 +3,7 @@
 </div>
 <div class="input-container">
     <mat-form-field>
-        <input (focus)="picker.open()" matInput placeholder="Reisedatum" [matDatepicker]="picker" placeholder="{{placeholder}}">
+        <input (focus)="picker.open()" matInput [matDatepicker]="picker" placeholder="{{placeholder}}">
         <mat-datepicker #picker touchUi="true" startView="year" [startAt]="startDate" startView="month"></mat-datepicker>
     </mat-form-field>
 </div>
