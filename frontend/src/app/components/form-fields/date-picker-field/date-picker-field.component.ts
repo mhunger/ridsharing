@@ -19,7 +19,7 @@ export class DatePickerFieldComponent implements OnInit {
       if(this.initialDate){
         this.selectedDateFormControl.setValue(this.initialDate);
       } else {
-        this.selectedDateFormControl.setValue(new Date()));
+        this.selectedDateFormControl.setValue(new Date());
       }
     }
 }
