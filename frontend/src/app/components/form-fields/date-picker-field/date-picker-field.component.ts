@@ -8,4 +8,5 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 })
 export class DatePickerFieldComponent {
     @Input() label: string;
+    @Input() placeholder: string;
 }
