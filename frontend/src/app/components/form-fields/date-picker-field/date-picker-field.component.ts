@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { MatDatepickerModule } from '@angular/material/datepicker';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
     selector: 'date-picker-field',
@@ -9,4 +9,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 export class DatePickerFieldComponent {
     @Input() label: string;
     @Input() placeholder: string;
+    datePickerFormGroup = new FormGroup({
+      initialDate: new FormControl(
+          new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
+        ),
+    });
 }

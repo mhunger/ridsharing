@@ -5,3 +5,7 @@ mat-form-field .mat-form-field-infix {
 mat-form-field .mat-input-underline {
   display: none;
 }
+
+mat-form-field .mat-form-field-label-wrapper {
+  display: none;
+}

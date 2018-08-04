@@ -1,9 +1,14 @@
 <div *ngIf="label">
     <label>{{label}}</label>
 </div>
-<div class="input-container">
+<div class="input-container" [formGroup]="datePickerFormGroup">
     <mat-form-field>
-        <input (focus)="picker.open()" matInput [matDatepicker]="picker" placeholder="{{placeholder}}">
+        <input (focus)="picker.open()"
+          (click)="picker.open()"
+          matInput
+          [matDatepicker]="picker"
+          placeholder="{{placeholder}}"
+          formControlName="initialDate">
         <mat-datepicker #picker touchUi="true" startView="year" [startAt]="startDate" startView="month"></mat-datepicker>
     </mat-form-field>
 </div>
