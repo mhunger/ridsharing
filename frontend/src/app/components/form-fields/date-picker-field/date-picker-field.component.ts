@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -6,12 +6,20 @@ import { FormControl, FormGroup } from '@angular/forms';
     templateUrl: 'date-picker-field.component.html',
     styleUrls: ['date-picker-field.component.css'],
 })
-export class DatePickerFieldComponent {
+export class DatePickerFieldComponent implements OnInit {
     @Input() label: string;
     @Input() placeholder: string;
+    @Input() initialDate;
+    selectedDateFormControl = new FormControl();
     datePickerFormGroup = new FormGroup({
-      initialDate: new FormControl(
-          new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
-        ),
+      selectedDate: this.selectedDateFormControl,
     });
+
+    ngOnInit() {
+      if(this.initialDate){
+        this.selectedDateFormControl.setValue(this.initialDate);
+      } else {
+        this.selectedDateFormControl.setValue(new Date()));
+      }
+    }
 }
