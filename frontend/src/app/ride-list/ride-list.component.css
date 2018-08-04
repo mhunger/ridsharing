@@ -189,13 +189,30 @@ span.icon.up-arrow { background-image: url(/assets/rides/icons/up-arrow.jpg); }
 span.icon.down-arrow { background-image: url(/assets/rides/icons/down-arrow.jpg); }
 
 
-.ride-filter-form .departure-destination-fields-container .column {
+.ride-filter-form .column-layout-container .column {
   display: inline-block;
 }
 
-.ride-filter-form .departure-destination-fields-container .column-left {
+.ride-filter-form .column-layout-container .column-left {
   width: 8%;
 }
-.ride-filter-form .departure-destination-fields-container .column-right {
+.ride-filter-form .column-layout-container .column-right {
   width: 90%;
 }
+
+.ride-filter-form date-picker-field.departure-date {
+  width: 100%;
+}
+
+.ride-filter-form span.date-picker-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: url('/assets/icons/calendar.png') left top no-repeat;
+  background-size: contain;
+  position: relative;
+  left: 5px;
+  top: 8px;
+}
+
+
