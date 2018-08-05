@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   padding-top: 70px;
-  padding-bottom: 50px;
+  padding-bottom: 2em;
   width: 100%;
   z-index: 8;
   transition-property: transform;
@@ -235,3 +235,7 @@ span.icon.down-arrow { background-image: url(/assets/rides/icons/down-arrow.jpg)
   height: 3em;
 }
 
+.ride-filter-form .apply-button-container {
+  margin-top: 2em;
+  text-align: center;
+}
