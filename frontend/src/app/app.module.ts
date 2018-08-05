@@ -15,6 +15,7 @@ import { LayoutHeaderComponent } from "./shared/layout-header/layout-header.comp
 import { SubmitButtonComponent } from "./shared/submit-button/submit-button.component";
 
 import { ComponentsModule } from './components/components.module';
+import { MatSelectModule } from '../../node_modules/@angular/material';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ComponentsModule } from './components/components.module';
     HttpModule,
     ComponentsModule,
     BrowserAnimationsModule,
+    MatSelectModule,
     RouterModule.forRoot([
       {
         path: '',

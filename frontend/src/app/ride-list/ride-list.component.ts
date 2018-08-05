@@ -16,6 +16,7 @@ export class RideListComponent implements OnInit {
   isFilterFormVisible = false;
 
   filterInitialDepartureDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
+  filterPassengerCount = 1;
 
   constructor(private rideService: RideService) { }
 

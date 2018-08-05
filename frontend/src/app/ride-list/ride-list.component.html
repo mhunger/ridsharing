@@ -30,13 +30,28 @@
   </div>
   <div class="column-layout-container">
     <div class="column column-left">
-      <span class="date-picker-icon"></span>
+      <span class="date-picker-icon field-icon"></span>
     </div>
     <div class="column column-right">
       <date-picker-field placeholder="Reisedatum" class="departure-date" [initialDate]="filterInitialDepartureDate"></date-picker-field>
     </div>
   </div>
-  <counter-field label="Anzahl Mitfahrer" minimum="1" maximum="3" value="{{1}}"></counter-field>
+  <div class="column-layout-container">
+    <div class="column column-left">
+      <span class="passenger-icon field-icon"></span>
+    </div>
+    <div class="column column-right">
+      <mat-form-field class="passenger-count">
+        <mat-select [(ngModel)]="filterPassengerCount">
+          <mat-option [value]="1">1 Person</mat-option>
+          <mat-option [value]="2">2 Person</mat-option>
+          <mat-option [value]="3">3 Person</mat-option>
+          <mat-option [value]="4">4 Person</mat-option>
+          <mat-option [value]="5">5 Person</mat-option>
+          <mat-option [value]="6">6 Person</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
   </div>
 </div>
 <div class="ride-filter-shadow" [class.show]="isFilterFormVisible" (click)="toggleFilterForm()"><!-- empty --></div>

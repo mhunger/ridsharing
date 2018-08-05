@@ -9,3 +9,7 @@ mat-form-field .mat-input-underline {
 mat-form-field .mat-form-field-label-wrapper {
   display: none;
 }
+
+mat-form-field .mat-form-field-wrapper {
+  padding-bottom: 0;
+}
