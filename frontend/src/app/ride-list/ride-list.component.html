@@ -37,40 +37,6 @@
     </div>
   </div>
   <counter-field label="Anzahl Mitfahrer" minimum="1" maximum="3" value="{{1}}"></counter-field>
-  <toggle-field label="Sitzplatzreservierung" description="Lorem ipsum dolor sit amet dolor sit amet"></toggle-field>
-  <toggle-field label="Sofortbuchung" description="Lorem ipsum dolor sit amet dolor sit amet"></toggle-field>
-  <counter-field label="Freie Sitzplätze" minimum="1" maximum="6" value="{{1}}"></counter-field>
-  <div style="padding: 1em 0;">
-    <div style="font-weight: bold;">Bezahlung</div>
-    <mat-button-toggle-group multiple="true">
-      <mat-button-toggle value="online">Onlinezahlung</mat-button-toggle>
-      <mat-button-toggle value="cash">Bargeldzahlung</mat-button-toggle>
-    </mat-button-toggle-group>
-  </div>
-  <div style="padding: 1em 0;">
-    <div style="font-weight: bold;">Während der Fahrt</div>
-    <mat-button-toggle-group multiple="true">
-      <mat-button-toggle value="woman_only">Woman Only</mat-button-toggle>
-      <mat-button-toggle value="animals_allowed">Tiere Erlaubt</mat-button-toggle>
-      <mat-button-toggle value="smoking_allowed">Rauchen Erlaubt</mat-button-toggle>
-    </mat-button-toggle-group>
-  </div>
-  <div style="padding: 1em 0;">
-    <div style="font-weight: bold;">Gepäck</div>
-    <mat-button-toggle-group multiple="true">
-      <mat-button-toggle value="small">Klein (S)</mat-button-toggle>
-      <mat-button-toggle value="medium">Mittel (M)</mat-button-toggle>
-      <mat-button-toggle value="large">Groß (L)</mat-button-toggle>
-    </mat-button-toggle-group>
-  </div>
-  <div style="padding: 1em 0;">
-    <div style="font-weight: bold;">Maximaler Preis</div>
-    <mat-slider
-        [min]="1"
-        [max]="10"
-        [step]="1"
-        style="width: 100%;"
-      ></mat-slider>
   </div>
 </div>
 <div class="ride-filter-shadow" [class.show]="isFilterFormVisible" (click)="toggleFilterForm()"><!-- empty --></div>
