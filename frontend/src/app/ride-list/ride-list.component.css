@@ -189,6 +189,13 @@ span.icon.detour { background-image: url(/assets/rides/icons/detour.png); }
 span.icon.up-arrow { background-image: url(/assets/rides/icons/up-arrow.jpg); }
 span.icon.down-arrow { background-image: url(/assets/rides/icons/down-arrow.jpg); }
 
+.ride-filter-form .departure-location-field-container {
+  margin-bottom: 1em;
+}
+
+.ride-filter-form .column-layout-container {
+  margin-bottom: 1em;
+}
 
 .ride-filter-form .column-layout-container .column {
   display: inline-block;
@@ -233,6 +240,7 @@ span.icon.down-arrow { background-image: url(/assets/rides/icons/down-arrow.jpg)
   padding: 5px;
   width: 100%;
   height: 3em;
+  font-size: 1.2em;
 }
 
 .ride-filter-form .apply-button-container {
