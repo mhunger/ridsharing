@@ -3,10 +3,13 @@ import {Ride} from '../models/Ride';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
+import { IFilterCondition } from '../interfaces/IFilterCondition';
+
 @Injectable()
 export class RideService {
 
   private rideUrl = '/api/rides';
+  private rideSearchUrl = '/api/ridesearch';
 
   /**
     * Hold recently fetched entries
@@ -15,7 +18,7 @@ export class RideService {
 
   constructor(private http: Http) {}
 
-  getRides(): Promise<Ride[]> {
+  private findAllRides(): Promise<Ride[]> {
     return this.http.get(this.rideUrl)
       .toPromise()
       .then((response) => {
@@ -23,6 +26,32 @@ export class RideService {
         return this.rideList;
       })
       .catch(this.handleError);
+  }
+
+  public findRides(filterConditions? : Array<IFilterCondition>) : Promise<Ride[]> {
+    if(!filterConditions){
+      return this.findAllRides();
+    }
+
+    const urlParameters = this.filterConditionsToUrlParameters(filterConditions);
+    const encodedUrlParameters = encodeURI(urlParameters);
+
+    return this.http.get(`${this.rideSearchUrl}?${encodedUrlParameters}`)
+      .toPromise()
+      .then((response) => {
+        this.rideList = response.json() as Ride[];
+        return this.rideList;
+      })
+      .catch(this.handleError);
+  }
+
+  private filterConditionsToUrlParameters(filter : Array<IFilterCondition>) : string {
+    return filter
+      .reduce((parameterList : [string], filter : IFilterCondition) => {
+          parameterList.push(`${filter.name}=${filter.value?filter.value:''}`);
+          return parameterList;
+        }, [] as [string])
+      .join('&')
   }
 
   /**

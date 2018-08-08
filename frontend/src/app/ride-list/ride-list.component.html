@@ -58,7 +58,7 @@
     </div>
   </div>
   <div class="apply-button-container">
-    <button mat-raised-button color="primary">Anwenden</button>
+    <button mat-raised-button color="primary" (click)="filterRideList(); toggleFilterForm();">Anwenden</button>
   </div>
 </div>
 <div class="ride-filter-shadow" [class.show]="isFilterFormVisible" (click)="toggleFilterForm()"><!-- empty --></div>
