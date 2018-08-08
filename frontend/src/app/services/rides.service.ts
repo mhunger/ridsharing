@@ -2,9 +2,6 @@ import {Injectable} from '@angular/core';
 import {Ride} from '../models/Ride';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
-/**
- * Created by michael_hunger on 05/07/17.
- */
 
 @Injectable()
 export class RideService {

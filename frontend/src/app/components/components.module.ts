@@ -14,7 +14,7 @@ import { CounterFieldComponent } from './form-fields/counter-field/counter-field
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSliderModule } from '@angular/material/slider';
-import { ReactiveFormsModule } from '../../../node_modules/@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
