@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { APP_DATE_FORMATS, AppDateAdapter } from './AppDateAdapter';
 import { AppComponent } from './app.component';
 import { RideDetailsComponent } from './ride-details/ride-details.component';
 import { RideFormComponent } from './ride-form/ride-form.component';
@@ -15,7 +16,7 @@ import { LayoutHeaderComponent } from "./shared/layout-header/layout-header.comp
 import { SubmitButtonComponent } from "./shared/submit-button/submit-button.component";
 
 import { ComponentsModule } from './components/components.module';
-import { MatSelectModule, MatButtonModule } from '@angular/material';
+import { MatSelectModule, MatButtonModule, DateAdapter, MAT_DATE_FORMATS } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,17 @@ import { MatSelectModule, MatButtonModule } from '@angular/material';
       }
     ])
   ],
-  providers: [ RideService ],
+  providers: [
+    RideService,
+    {
+      provide: DateAdapter,
+      useClass: AppDateAdapter,
+    },
+    {
+      provide: MAT_DATE_FORMATS,
+      useValue: APP_DATE_FORMATS,
+    }
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

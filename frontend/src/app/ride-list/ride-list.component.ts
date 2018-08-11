@@ -69,7 +69,7 @@ export class RideListComponent implements OnInit {
   }
   public setTravelDayFilter(value: IMomentJs) {
     const date = <any>value;
-    this.filterConditions.travelDay = date.toDate();
+    this.filterConditions.travelDay = date;
   }
   public setSeatsFilter(value) {
     this.filterConditions.seats = value;
