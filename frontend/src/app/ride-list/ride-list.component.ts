@@ -3,6 +3,8 @@ import { Ride } from '../models/Ride';
 import { RideService } from '../services/rides.service';
 import { IFilterCondition } from '../interfaces/IFilterCondition';
 
+interface IMomentJs {};
+
 @Component({
   selector: 'app-ride-list',
   templateUrl: './ride-list.component.html',
@@ -65,8 +67,9 @@ export class RideListComponent implements OnInit {
   public setDestinationFilter(value: string) {
     this.filterConditions.to = value;
   }
-  public setTravelDayFilter(value) {
-    this.filterConditions.travelDay = value.format('M/DD/YYYY');
+  public setTravelDayFilter(value: IMomentJs) {
+    const date = <any>value;
+    this.filterConditions.travelDay = date.toDate();
   }
   public setSeatsFilter(value) {
     this.filterConditions.seats = value;
