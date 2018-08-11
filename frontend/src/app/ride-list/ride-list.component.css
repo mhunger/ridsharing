@@ -59,6 +59,14 @@
   width: 90%;
 }
 
+.no-rides-found {
+  width: 100%;
+  padding: 5em 0;
+  text-align: center;
+  font-size: 2em;
+  color: #AAA;
+}
+
 .ride-list .ride {
   margin-bottom: 20px;
 }

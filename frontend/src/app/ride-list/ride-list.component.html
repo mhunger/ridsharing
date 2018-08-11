@@ -66,6 +66,9 @@
   <div class="filter-summary">{{getFilterTextSummary()}}</div>
 </div>
 <div class="container ride-list">
+  <div *ngIf="rideList && rideList.length === 0" class="no-rides-found">
+    Keine Fahrten gefunden.
+  </div>
   <div class="row ride" *ngFor="let ride of rideList">
     <div class="col-xs-12">
       <div class="row header" routerLink="view/{{ride.id}}">
