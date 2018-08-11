@@ -3,13 +3,14 @@
 </div>
 <div class="input-container" [formGroup]="datePickerFormGroup">
     <mat-form-field>
-        <input (focus)="picker.open()"
+        <input
+          (focus)="picker.open()"
           (click)="picker.open()"
           (dateChange)="onChange($event)"
           matInput
           [matDatepicker]="picker"
           placeholder="{{placeholder}}"
           formControlName="selectedDate">
-        <mat-datepicker #picker touchUi="true" startView="year" [startAt]="startDate" startView="month"></mat-datepicker>
+        <mat-datepicker #picker touchUi="true" startView="year" startView="month"></mat-datepicker>
     </mat-form-field>
 </div>
