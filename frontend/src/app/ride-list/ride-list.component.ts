@@ -50,6 +50,15 @@ export class RideListComponent implements OnInit {
     });
   }
 
+  public getFilterTextSummary() {
+    const getSeats = (count) => count > 1 ? `${count} Personen` : `${count} Person`;
+    return `${this.filterConditions.from} • ${this.filterConditions.to} • ${this.dateToString(this.filterConditions.travelDay)} • ${getSeats(this.filterConditions.seats)} `
+  }
+
+  private dateToString(date: Date) {
+    return `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+  }
+
   public setDepartureFilter(value: string) {
     this.filterConditions.from = value;
   }
