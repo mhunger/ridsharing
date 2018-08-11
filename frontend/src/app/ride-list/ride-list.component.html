@@ -28,7 +28,7 @@
         <location-field placeholderText="Start" radiusOption="true"></location-field>
       </div>
       <div class="destination-location-field-container">
-        <location-field placeholderText="Ziel" radiusOption="true"></location-field>
+        <location-field (change)="setDestinationFilter($event)" placeholderText="Ziel" radiusOption="true"></location-field>
       </div>
     </div>
   </div>
@@ -37,7 +37,7 @@
       <span class="date-picker-icon field-icon"></span>
     </div>
     <div class="column column-right">
-      <date-picker-field placeholder="Reisedatum" class="departure-date" [initialDate]="filterInitialDepartureDate"></date-picker-field>
+      <date-picker-field (change)="setTravelDayFilter($event.value)" placeholder="Reisedatum" class="departure-date" [initialDate]="filterConditions.travelDay"></date-picker-field>
     </div>
   </div>
   <div class="column-layout-container">
@@ -46,13 +46,13 @@
     </div>
     <div class="column column-right">
       <mat-form-field class="passenger-count">
-        <mat-select [(ngModel)]="filterPassengerCount">
+        <mat-select (selectionChange)="setSeatsFilter($event.value)" [(ngModel)]="filterConditions.seats">
           <mat-option [value]="1">1 Person</mat-option>
-          <mat-option [value]="2">2 Person</mat-option>
-          <mat-option [value]="3">3 Person</mat-option>
-          <mat-option [value]="4">4 Person</mat-option>
-          <mat-option [value]="5">5 Person</mat-option>
-          <mat-option [value]="6">6 Person</mat-option>
+          <mat-option [value]="2">2 Personen</mat-option>
+          <mat-option [value]="3">3 Personen</mat-option>
+          <mat-option [value]="4">4 Personen</mat-option>
+          <mat-option [value]="5">5 Personen</mat-option>
+          <mat-option [value]="6">6 Personen</mat-option>
         </mat-select>
       </mat-form-field>
     </div>

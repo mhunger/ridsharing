@@ -1,4 +1,4 @@
 export interface IFilterCondition {
   name: string;
-  value: string | number;
+  value: String | Number | Date;
 }

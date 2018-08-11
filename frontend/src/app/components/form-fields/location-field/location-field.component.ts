@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material';
 
 @Component({
@@ -10,7 +10,9 @@ export class LocationFieldComponent {
     @Input() label: string;
     @Input() placeholderText: string = "Enter your location";
     @Input() radiusOption: boolean = false;
-    private radiusInKilometer: number = 1;
+    @Output() change: EventEmitter<String> = new EventEmitter<String>();
+    @Output() radiusInKilometer: number = 1;
+    @Output() value: String;
     private matDialog: MatDialog;
 
     constructor(matDialog: MatDialog) {
@@ -23,6 +25,11 @@ export class LocationFieldComponent {
             if (!result) return;
             this.radiusInKilometer = result.radius;
         });
+    }
+
+    public onChange(value) {
+      this.value = value;
+      this.change.emit(value);
     }
 }
 

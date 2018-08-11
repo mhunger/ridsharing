@@ -2,7 +2,7 @@
     <label>{{label}}</label>
 </div>
 <div class="input-container">
-    <input type="text" placeholder="{{placeholderText}}" mapsAutocomplete />
+    <input (input)="onChange($event.target.value)" (change)="onChange($event.target.value)" type="text" placeholder="{{placeholderText}}" mapsAutocomplete />
     <div class="radius-container" *ngIf="radiusOption">
         <button (click)="openRadiusDialog()">{{"+"+radiusInKilometer+" KM"}}</button>
     </div>

@@ -5,6 +5,7 @@
     <mat-form-field>
         <input (focus)="picker.open()"
           (click)="picker.open()"
+          (dateChange)="onChange($event)"
           matInput
           [matDatepicker]="picker"
           placeholder="{{placeholder}}"

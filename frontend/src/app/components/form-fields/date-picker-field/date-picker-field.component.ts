@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -10,6 +10,7 @@ export class DatePickerFieldComponent implements OnInit {
     @Input() label: string;
     @Input() placeholder: string;
     @Input() initialDate;
+    @Output() change: EventEmitter<Date> = new EventEmitter<Date>();
     selectedDateFormControl = new FormControl();
     datePickerFormGroup = new FormGroup({
       selectedDate: this.selectedDateFormControl,
@@ -21,5 +22,9 @@ export class DatePickerFieldComponent implements OnInit {
       } else {
         this.selectedDateFormControl.setValue(new Date());
       }
+    }
+
+    onChange(date: Date) {
+      this.change.emit(date);
     }
 }
