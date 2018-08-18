@@ -42,7 +42,7 @@ export class RideListComponent implements OnInit {
     const filters : Array<IFilterCondition> = [
       {name: 'from', value: this.filterConditions.from},
       {name: 'to', value: this.filterConditions.to},
-      {name: 'travelDay', value: this.filterConditions.travelDay},
+      {name: 'travelDay', value: this.dateToString(this.filterConditions.travelDay)},
       {name: 'seats', value: this.filterConditions.seats},
     ];
 
