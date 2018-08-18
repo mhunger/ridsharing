@@ -25,10 +25,10 @@
     </div>
     <div class="column column-right">
       <div class="departure-location-field-container">
-        <location-field placeholderText="Start" radiusOption="true"></location-field>
+        <location-field (valueChange)="setDepartureFilter($event)" placeholderText="Start"></location-field>
       </div>
       <div class="destination-location-field-container">
-        <location-field (change)="setDestinationFilter($event)" placeholderText="Ziel" radiusOption="true"></location-field>
+        <location-field (valueChange)="setDestinationFilter($event)" placeholderText="Ziel"></location-field>
       </div>
     </div>
   </div>

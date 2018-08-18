@@ -10,7 +10,7 @@ export class LocationFieldComponent {
     @Input() label: string;
     @Input() placeholderText: string = "Enter your location";
     @Input() radiusOption: boolean = false;
-    @Output() change: EventEmitter<String> = new EventEmitter<String>();
+    @Output() valueChange: EventEmitter<Event> = new EventEmitter<Event>();
     @Output() radiusInKilometer: number = 1;
     @Output() value: String;
     private matDialog: MatDialog;
@@ -29,7 +29,7 @@ export class LocationFieldComponent {
 
     public onChange(value) {
       this.value = value;
-      this.change.emit(value);
+      this.valueChange.emit(value);
     }
 }
 
