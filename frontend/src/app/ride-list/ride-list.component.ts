@@ -35,10 +35,12 @@ export class RideListComponent implements OnInit {
     seats: 1,
   };
 
-  constructor(private rideService: RidesSearchService,
-              private store: Store<RootState>) { }
+  constructor(private store: Store<RootState>) {
+    // empty
+  }
 
   ngOnInit() {
+    this.filterRideList();
   }
 
   toggleFilterForm() {
@@ -46,15 +48,15 @@ export class RideListComponent implements OnInit {
   }
 
   filterRideList( ) {
-    const parameters: IRidesSearchParameters = {
+    this.store.dispatch(new RidesSearch(this.getRideSearchParams()));
+  }
+
+  private getRideSearchParams = (): IRidesSearchParameters => ({
       from: this.filterConditions.from,
       to: this.filterConditions.to,
       travelDay: this.dateToString(this.filterConditions.travelDay),
       seats: this.filterConditions.seats,
-    };
-
-    this.store.dispatch(new RidesSearch(parameters));
-  }
+    });
 
   public getFilterTextSummary() {
     const getSeats = (count) => count > 1 ? `${count} Personen` : `${count} Person`;
