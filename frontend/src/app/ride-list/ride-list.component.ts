@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { RidesSearchService } from '../services/rides-search.service';
 import { Store } from '@ngrx/store';
 import { RootState } from '../state/root.state';
-import { filter, map } from 'rxjs/operators';
-import { RidesSearch, IRidesSearchParameters } from '../state/ride-search/rides-search.actions';
-
-interface IMomentJs {};
+import { filter, map, first } from 'rxjs/operators';
+import { RidesSearch, RidesSearchFilterUpdate } from '../state/ride-search/rides-search.actions';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-ride-list',
@@ -23,61 +21,50 @@ export class RideListComponent implements OnInit {
   public rideSearchFailed$ = this.store
             .select(state => state.ridesSearch)
             .pipe(map(ridesSearch => ridesSearch.failed));
+  public filterSummary$: Observable<string> = this.store
+    .select(state => state.ridesSearch)
+    .pipe(
+      map(ridesSearch => ridesSearch.filter),
+      map(filterParams => {
+        const getSeats = (count) => count > 1 ? `${count} Personen` : `${count} Person`;
+        return `${filterParams.from} • ${filterParams.to} • ${filterParams.travelDay} • ${getSeats(filterParams.seats)} `
+      })
+    );
 
-  foundResults = 0;
-
-  isFilterFormVisible = false;
-
-  filterConditions = {
-    from: 'Munich',
-    to: 'Geneva',
-    travelDay: new Date(new Date().getTime() + 24 * 60 * 60 * 1000),
-    seats: 1,
-  };
+  public foundResults = 0;
+  public isFilterFormVisible = false;
 
   constructor(private store: Store<RootState>) {
-    // empty
   }
 
   ngOnInit() {
+    this.store.dispatch(new RidesSearchFilterUpdate({
+      from: 'Munich',
+      to: 'Geneva',
+      travelDay: '2018-08-30',
+      seats: 1,
+    }));
     this.filterRideList();
   }
 
-  toggleFilterForm() {
-    this.isFilterFormVisible = !this.isFilterFormVisible;
+  public hideFilterPanel() {
+    this.isFilterFormVisible = false;
   }
 
-  filterRideList( ) {
-    this.store.dispatch(new RidesSearch(this.getRideSearchParams()));
+  public hideFilterAndSearch() {
+    this.hideFilterPanel();
+    this.filterRideList();
   }
 
-  private getRideSearchParams = (): IRidesSearchParameters => ({
-      from: this.filterConditions.from,
-      to: this.filterConditions.to,
-      travelDay: this.dateToString(this.filterConditions.travelDay),
-      seats: this.filterConditions.seats,
-    });
-
-  public getFilterTextSummary() {
-    const getSeats = (count) => count > 1 ? `${count} Personen` : `${count} Person`;
-    return `${this.filterConditions.from} • ${this.filterConditions.to} • ${this.dateToString(this.filterConditions.travelDay)} • ${getSeats(this.filterConditions.seats)} `
+  public showFilterPanel() {
+    this.isFilterFormVisible = true;
   }
 
-  private dateToString(date: Date) {
-    return `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
-  }
-
-  public setDepartureFilter(value: string) {
-    this.filterConditions.from = value;
-  }
-  public setDestinationFilter(value: string) {
-    this.filterConditions.to = value;
-  }
-  public setTravelDayFilter(value: IMomentJs) {
-    const date = <any>value;
-    this.filterConditions.travelDay = date;
-  }
-  public setSeatsFilter(value) {
-    this.filterConditions.seats = value;
+  filterRideList() {
+    this.store.select(state => state.ridesSearch.filter)
+      .pipe(first())
+      .subscribe(filterParameter => {
+        this.store.dispatch(new RidesSearch(filterParameter));
+      })
   }
 }

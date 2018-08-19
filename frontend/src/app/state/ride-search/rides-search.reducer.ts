@@ -1,7 +1,8 @@
 import { RidesSearchState } from './rides-search.state';
-import { RidesSearchSuccess, RidesSearchFailure } from './rides-search.actions';
+import { RidesSearchSuccess, RidesSearchFailure, RidesSearchFilterUpdate } from './rides-search.actions';
 
 const defaultRidesSearchState: RidesSearchState = {
+  filter: {},
   results: null,
   failed: false,
 };
@@ -20,6 +21,11 @@ export const ridesSearchReducer = (state: RidesSearchState = defaultRidesSearchS
         failed: true,
         results: [],
       };
+    case RidesSearchFilterUpdate.type:
+      return {
+        ...state,
+        filter: Object.assign(state.filter, (action as RidesSearchFilterUpdate).parameter),
+      }
     default:
       return state;
   }

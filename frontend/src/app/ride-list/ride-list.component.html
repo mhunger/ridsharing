@@ -1,69 +1,9 @@
-<div class="container ride-filter-form" [class.open]="isFilterFormVisible">
-  <div class="departure-destination-fields-container column-layout-container">
-    <div class="column column-left">
-      <div style="display: none">
-        <svg id="location-field-icons" width="100%" height="100%" preserveAspectRatio xmlns="http://www.w3.org/2000/svg">
-          <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
-          <g>
-            <title>background</title>
-            <rect fill="#fff" id="canvas_background" height="40" width="12" y="-1" x="-1"/>
-            <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
-            <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
-            </g>
-          </g>
-          <g>
-            <title>Layer 1</title>
-            <ellipse stroke="#000" ry="3.5" rx="3.5" id="svg_1" cy="5" cx="5.125" stroke-width="0" fill="#ff0000"/>
-            <ellipse ry="3.5" rx="3.5" id="svg_3" cy="32.596397" cx="5.125" stroke="#00bfbf" fill="none"/>
-            <line stroke-width="2" stroke-dasharray="2,2" stroke-linecap="null" stroke-linejoin="null" id="svg_4" y2="27.434415" x2="4.982143" y1="11.714286" x1="4.982143" stroke="#999999" fill="none"/>
-          </g>
-        </svg>
-      </div>
-      <svg viewBox="-2 -12 40 50" width="90" height="100" class="field-icons-container">
-          <use xlink:href="#location-field-icons"/>
-      </svg>
-    </div>
-    <div class="column column-right">
-      <div class="departure-location-field-container">
-        <location-field (valueChange)="setDepartureFilter($event)" placeholderText="Start"></location-field>
-      </div>
-      <div class="destination-location-field-container">
-        <location-field (valueChange)="setDestinationFilter($event)" placeholderText="Ziel"></location-field>
-      </div>
-    </div>
-  </div>
-  <div class="column-layout-container">
-    <div class="column column-left">
-      <span class="date-picker-icon field-icon"></span>
-    </div>
-    <div class="column column-right">
-      <date-picker-field (change)="setTravelDayFilter($event.value)" placeholder="Reisedatum" class="departure-date" [initialDate]="filterConditions.travelDay"></date-picker-field>
-    </div>
-  </div>
-  <div class="column-layout-container">
-    <div class="column column-left">
-      <span class="passenger-icon field-icon"></span>
-    </div>
-    <div class="column column-right">
-      <mat-form-field class="passenger-count">
-        <mat-select (selectionChange)="setSeatsFilter($event.value)" [(ngModel)]="filterConditions.seats">
-          <mat-option [value]="1">1 Person</mat-option>
-          <mat-option [value]="2">2 Personen</mat-option>
-          <mat-option [value]="3">3 Personen</mat-option>
-          <mat-option [value]="4">4 Personen</mat-option>
-          <mat-option [value]="5">5 Personen</mat-option>
-          <mat-option [value]="6">6 Personen</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-  </div>
-  <div class="apply-button-container">
-    <button mat-raised-button color="primary" (click)="filterRideList(); toggleFilterForm();">Anwenden</button>
-  </div>
-</div>
-<div class="ride-filter-shadow" [class.show]="isFilterFormVisible" (click)="toggleFilterForm()"><!-- empty --></div>
-<div class="ride-filter-summary-container" (click)="toggleFilterForm()">
-  <div class="filter-summary">{{getFilterTextSummary()}}</div>
+<filter-panel
+  *ngIf="isFilterFormVisible"
+  (apply)="hideFilterAndSearch()"
+  (hide)="hideFilterPanel()"></filter-panel>
+<div class="ride-filter-summary-container" (click)="showFilterPanel()">
+  <div class="filter-summary">{{filterSummary$ | async}}</div>
 </div>
 <div class="container ride-list">
   <div *ngIf="(ridesSearchResults$ | async)?.length === 0" class="no-rides-found">
