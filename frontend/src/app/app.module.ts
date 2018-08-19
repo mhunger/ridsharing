@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { StoreModule } from '@ngrx/store';
 import { APP_DATE_FORMATS, AppDateAdapter } from './AppDateAdapter';
 import { AppComponent } from './app.component';
 import { RideDetailsComponent } from './ride-details/ride-details.component';
@@ -17,6 +17,11 @@ import { SubmitButtonComponent } from "./shared/submit-button/submit-button.comp
 
 import { ComponentsModule } from './components/components.module';
 import { MatSelectModule, MatButtonModule, DateAdapter, MAT_DATE_FORMATS } from '@angular/material';
+import { searchRidesReducer } from './state/ride-search/ride-search.reducer';
+
+const reducerMap = {
+  searchRides: searchRidesReducer,
+};
 
 @NgModule({
   declarations: [
@@ -36,6 +41,7 @@ import { MatSelectModule, MatButtonModule, DateAdapter, MAT_DATE_FORMATS } from 
     BrowserAnimationsModule,
     MatSelectModule,
     MatButtonModule,
+    StoreModule.forRoot(reducerMap),
     RouterModule.forRoot([
       {
         path: '',
