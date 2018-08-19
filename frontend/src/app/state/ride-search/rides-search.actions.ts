@@ -24,8 +24,8 @@ export class RidesSearchSuccess {
   public type: string = `${RIDES_SEARCH_ACTION_PREFIX}.Success`;
   public payload: Array<Ride>;
 
-  constructor(response: Response) {
-    this.payload = response.json();
+  constructor(rides: Array<Ride>) {
+    this.payload = rides;
   }
 }
 

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RidesSearchService } from '../services/rides-search.service';
 import { Store } from '@ngrx/store';
 import { RootState } from '../state/root.state';
-import { filter } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 import { RidesSearch, IRidesSearchParameters } from '../state/ride-search/rides-search.actions';
 
 interface IMomentJs {};
@@ -16,9 +16,10 @@ export class RideListComponent implements OnInit {
 
   public ridesSearchResults$ = this.store
             .select(state => state.ridesSearch)
-            .pipe(filter(state=>{
-              return state.results !== null;
-            }));
+            .pipe(
+              filter(state=>state.results !== null),
+              map(ridesSearch => ridesSearch.results)
+            );
 
   foundResults = 0;
 

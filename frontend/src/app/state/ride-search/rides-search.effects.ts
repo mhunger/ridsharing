@@ -20,9 +20,10 @@ export class RidesSearchEffects {
     .pipe(
       switchMap(({payload}: RidesSearch) =>
         this.rideService.findRides(payload)
-      .pipe(
-        map((response) => new RidesSearchSuccess(response.json())),
-        catchError(() => observableOf(new RidesSearchFailure()))
-      ))
+          .pipe(map(
+            response => new RidesSearchSuccess(response.json()),
+            catchError(() => observableOf(new RidesSearchFailure()))
+          ))
+      )
     );
 }
