@@ -6,22 +6,24 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
 import { APP_DATE_FORMATS, AppDateAdapter } from './AppDateAdapter';
 import { AppComponent } from './app.component';
 import { RideDetailsComponent } from './ride-details/ride-details.component';
 import { RideFormComponent } from './ride-form/ride-form.component';
 import { RideListComponent } from './ride-list/ride-list.component';
-import { RideService } from "./services/rides.service";
+import { RidesSearchService } from "./services/rides-search.service";
 import { StarRating } from './shared/star-rating/star-rating.component';
 import { LayoutHeaderComponent } from "./shared/layout-header/layout-header.component";
 import { SubmitButtonComponent } from "./shared/submit-button/submit-button.component";
 
 import { ComponentsModule } from './components/components.module';
 import { MatSelectModule, MatButtonModule, DateAdapter, MAT_DATE_FORMATS } from '@angular/material';
-import { searchRidesReducer } from './state/ride-search/ride-search.reducer';
+import { ridesSearchReducer } from './state/ride-search/rides-search.reducer';
+import { RidesSearchEffects } from './state/ride-search/rides-search.effects';
 
 const reducerMap = {
-  searchRides: searchRidesReducer,
+  ridesSearch: ridesSearchReducer,
 };
 
 @NgModule({
@@ -46,6 +48,9 @@ const reducerMap = {
     StoreDevtoolsModule.instrument({
       maxAge: 25,
     }),
+    EffectsModule.forRoot([
+      RidesSearchEffects,
+    ]),
     RouterModule.forRoot([
       {
         path: '',
@@ -67,7 +72,7 @@ const reducerMap = {
     ])
   ],
   providers: [
-    RideService,
+    RidesSearchService,
     {
       provide: DateAdapter,
       useClass: AppDateAdapter,

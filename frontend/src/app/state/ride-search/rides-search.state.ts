@@ -1,5 +1,5 @@
 import { Ride } from '../../models/Ride';
 
-export interface SearchRidesState {
+export interface RidesSearchState {
   results: Array<Ride> | null;
 }

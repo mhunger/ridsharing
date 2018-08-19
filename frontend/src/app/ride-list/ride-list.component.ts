@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Ride } from '../models/Ride';
-import { RideService } from '../services/rides.service';
-import { IFilterCondition } from '../interfaces/IFilterCondition';
+import { RidesSearchService } from '../services/rides-search.service';
+import { Store } from '@ngrx/store';
+import { RootState } from '../state/root.state';
+import { filter } from 'rxjs/operators';
+import { RidesSearch, IRidesSearchParameters } from '../state/ride-search/rides-search.actions';
 
 interface IMomentJs {};
 
@@ -12,7 +14,11 @@ interface IMomentJs {};
 })
 export class RideListComponent implements OnInit {
 
-  rideList: Ride[];
+  public ridesSearchResults$ = this.store
+            .select(state => state.ridesSearch)
+            .pipe(filter(state=>{
+              return state.results !== null;
+            }));
 
   foundResults = 0;
 
@@ -25,13 +31,10 @@ export class RideListComponent implements OnInit {
     seats: 1,
   };
 
-  constructor(private rideService: RideService) { }
+  constructor(private rideService: RidesSearchService,
+              private store: Store<RootState>) { }
 
   ngOnInit() {
-    this.rideService.findRides().then((rides) => {
-      this.rideList = rides;
-      this.foundResults = rides.length;
-    });
   }
 
   toggleFilterForm() {
@@ -39,17 +42,14 @@ export class RideListComponent implements OnInit {
   }
 
   filterRideList( ) {
-    const filters : Array<IFilterCondition> = [
-      {name: 'from', value: this.filterConditions.from},
-      {name: 'to', value: this.filterConditions.to},
-      {name: 'travelDay', value: this.dateToString(this.filterConditions.travelDay)},
-      {name: 'seats', value: this.filterConditions.seats},
-    ];
+    const parameters: IRidesSearchParameters = {
+      from: this.filterConditions.from,
+      to: this.filterConditions.to,
+      travelDay: this.dateToString(this.filterConditions.travelDay),
+      seats: this.filterConditions.seats,
+    };
 
-    this.rideService.findRides(filters).then((rides) => {
-      this.rideList = rides;
-      this.foundResults = rides.length;
-    });
+    this.store.dispatch(new RidesSearch(parameters));
   }
 
   public getFilterTextSummary() {

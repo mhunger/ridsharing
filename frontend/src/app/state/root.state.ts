@@ -1,5 +1,5 @@
-import { SearchRidesState } from './ride-search/ride-search.state';
+import { RidesSearchState } from './ride-search/rides-search.state';
 
 export interface RootState {
-  searchRides: SearchRidesState;
+  ridesSearch: RidesSearchState;
 }
