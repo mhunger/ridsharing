@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material';
 
 @Component({
@@ -6,9 +6,10 @@ import { MatDialog, MatDialogRef } from '@angular/material';
     templateUrl: "location-field.component.html",
     styleUrls: ["location-field.component.css"],
 })
-export class LocationFieldComponent {
+export class LocationFieldComponent implements OnInit {
     @Input() label: string;
     @Input() placeholderText: string = "Enter your location";
+    @Input() initialValue: string;
     @Input() radiusOption: boolean = false;
     @Output() valueChange: EventEmitter<Event> = new EventEmitter<Event>();
     @Output() radiusInKilometer: number = 1;
@@ -17,6 +18,10 @@ export class LocationFieldComponent {
 
     constructor(matDialog: MatDialog) {
         this.matDialog = matDialog;
+      }
+
+    ngOnInit() {
+      this.value = this.initialValue || '';
     }
 
     openRadiusDialog() {

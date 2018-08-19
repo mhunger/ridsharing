@@ -3,10 +3,6 @@ import { RidesSearchFilterUpdate } from '../../state/ride-search/rides-search.ac
 import { Store } from '@ngrx/store';
 import { RootState } from '../../state/root.state';
 
-interface IMomentJs {
-  toDate: Function,
-};
-
 @Component({
   selector: 'filter-panel',
   templateUrl: './filter-panel.component.html',
@@ -35,8 +31,8 @@ export class FilterPanelComponent {
   public setDestinationFilter(value: string) {
     this.store.dispatch(new RidesSearchFilterUpdate({to: value}));
   }
-  public setTravelDayFilter(value: IMomentJs) {
-    this.store.dispatch(new RidesSearchFilterUpdate({travelDay: this.dateToString(value.toDate())}));
+  public setTravelDayFilter(value: Date) {
+    this.store.dispatch(new RidesSearchFilterUpdate({travelDay: this.dateToString(value)}));
   }
   public setSeatsFilter(value: number) {
     this.store.dispatch(new RidesSearchFilterUpdate({seats: value}));

@@ -17,10 +17,14 @@ export class DatePickerFieldComponent implements OnInit {
     });
 
     ngOnInit() {
-      if(this.initialDate){
-        this.selectedDateFormControl.setValue(this.initialDate);
+      if (!this.initialDate) {
+        return this.selectedDateFormControl.setValue(new Date());
+      }
+
+      if(typeof this.initialDate === 'string'){
+        this.selectedDateFormControl.setValue(new Date(Date.parse(this.initialDate)));
       } else {
-        this.selectedDateFormControl.setValue(new Date());
+        this.selectedDateFormControl.setValue(this.initialDate);
       }
     }
 

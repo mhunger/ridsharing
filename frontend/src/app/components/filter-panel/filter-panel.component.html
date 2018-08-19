@@ -24,10 +24,10 @@
       </div>
       <div class="column column-right">
         <div class="departure-location-field-container">
-          <location-field (valueChange)="setDepartureFilter($event)" placeholderText="Start"></location-field>
+          <location-field [initialValue]="(rideSearchFilter$ | async).from" (valueChange)="setDepartureFilter($event)" placeholderText="Start"></location-field>
         </div>
         <div class="destination-location-field-container">
-          <location-field (valueChange)="setDestinationFilter($event)" placeholderText="Ziel"></location-field>
+          <location-field [initialValue]="(rideSearchFilter$ | async).to" (valueChange)="setDestinationFilter($event)" placeholderText="Ziel"></location-field>
         </div>
       </div>
     </div>
@@ -36,7 +36,7 @@
         <span class="date-picker-icon field-icon"></span>
       </div>
       <div class="column column-right">
-        <date-picker-field (change)="setTravelDayFilter($event.value)" placeholder="Reisedatum" class="departure-date" [initialDate]="tomorrowDate"></date-picker-field>
+        <date-picker-field (change)="setTravelDayFilter($event.value)" placeholder="Reisedatum" class="departure-date" [initialDate]="(rideSearchFilter$ | async).travelDay"></date-picker-field>
       </div>
     </div>
     <div class="column-layout-container">
