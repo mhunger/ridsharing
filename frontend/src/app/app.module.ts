@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { APP_DATE_FORMATS, AppDateAdapter } from './AppDateAdapter';
 import { AppComponent } from './app.component';
 import { RideDetailsComponent } from './ride-details/ride-details.component';
@@ -42,6 +43,9 @@ const reducerMap = {
     MatSelectModule,
     MatButtonModule,
     StoreModule.forRoot(reducerMap),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+    }),
     RouterModule.forRoot([
       {
         path: '',
