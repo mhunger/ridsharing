@@ -20,6 +20,9 @@ export class RideListComponent implements OnInit {
               filter(state=>state.results !== null),
               map(ridesSearch => ridesSearch.results)
             );
+  public rideSearchFailed$ = this.store
+            .select(state => state.ridesSearch)
+            .pipe(map(ridesSearch => ridesSearch.failed));
 
   foundResults = 0;
 

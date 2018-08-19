@@ -1,4 +1,4 @@
-import { Http } from "@angular/http";
+import { Http, RequestOptionsArgs } from "@angular/http";
 
 export class BackendBaseService {
   private basePath: string;
@@ -11,15 +11,15 @@ export class BackendBaseService {
     this.basePath = `/api${servicePath}`;
   }
 
-  protected get(path: string, payload: any) {
-    return this.http.get(`${this.basePath}${path}`, payload);
+  protected get(payload: RequestOptionsArgs) {
+    return this.http.get(`${this.basePath}`, payload);
   }
 
-  protected delete(path: string, payload: any) {
-    return this.http.delete(`${this.basePath}${path}`, payload);
+  protected delete(payload: any) {
+    return this.http.delete(`${this.basePath}`, payload);
   }
 
-  protected post(path: string, payload: any) {
-    return this.http.post(`${this.basePath}${path}`, payload);
+  protected post(payload: any) {
+    return this.http.post(`${this.basePath}`, payload);
   }
 }

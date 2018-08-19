@@ -67,7 +67,8 @@
 </div>
 <div class="container ride-list">
   <div *ngIf="(ridesSearchResults$ | async)?.length === 0" class="no-rides-found">
-    Keine Fahrten gefunden.
+    <p *ngIf="(rideSearchFailed$ | async) === false">Keine Fahrten gefunden.</p>
+    <p *ngIf="(rideSearchFailed$ | async) === true">Es ist ein Fehler aufgetreten!</p>
   </div>
   <div class="row ride" *ngFor="let ride of ridesSearchResults$ | async">
     <div class="col-xs-12">

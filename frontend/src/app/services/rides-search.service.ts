@@ -7,8 +7,6 @@ import { IRidesSearchParameters } from '../state/ride-search/rides-search.action
 @Injectable()
 export class RidesSearchService extends BackendBaseService {
 
-  private rideSearchUrl = '/api/ridesearch';
-
   private rideList : any = [];
 
   constructor(protected http: Http) {
@@ -19,7 +17,7 @@ export class RidesSearchService extends BackendBaseService {
     const urlParameters = this.filterConditionsToUrlParameters(filterConditions);
     const encodedUrlParameters = encodeURI(urlParameters);
 
-    return this.http.get(`${this.rideSearchUrl}?${encodedUrlParameters}`);
+    return super.get({params: encodedUrlParameters});
   }
 
   private filterConditionsToUrlParameters(filter : IRidesSearchParameters) : string {
