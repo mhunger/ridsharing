@@ -1,16 +1,16 @@
 import { Ride } from "../../models/Ride";
 
-const RIDES_SEARCH_ACTION_PREFIX = 'SearchRides';
+const SEARCH_RIDES_ACTION_PREFIX = 'SearchRides';
 
-export class RidesSearch {
-  public static type: string = RIDES_SEARCH_ACTION_PREFIX;
+export class SearchRides {
+  public static type: string = SEARCH_RIDES_ACTION_PREFIX;
 }
 
-export class RidesSearchSuccess {
-  public static type: string = `${RIDES_SEARCH_ACTION_PREFIX}.Success`;
+export class SearchRidesSuccess {
+  public static type: string = `${SEARCH_RIDES_ACTION_PREFIX}.Success`;
   public payload: Array<Ride>;
 }
 
-export class RidesSearchFailure {
-  public static type: string = `${RIDES_SEARCH_ACTION_PREFIX}.Failure`;
+export class SearchRidesFailure {
+  public static type: string = `${SEARCH_RIDES_ACTION_PREFIX}.Failure`;
 }
