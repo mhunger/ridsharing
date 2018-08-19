@@ -11,23 +11,6 @@
   transition-duration: .5s;
 }
 
-.ride-filter-shadow {
-  visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .0);
-  z-index: 5;
-  transition-duration: .5s;
-  transition-property: background-color;
-}
-.ride-filter-shadow.show {
-  visibility: visible;
-  background-color: rgba(0, 0, 0, .4);
-}
-
 .ride-filter-form .departure-location-field-container {
   margin-bottom: 1em;
 }
