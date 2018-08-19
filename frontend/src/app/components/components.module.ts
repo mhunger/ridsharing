@@ -8,7 +8,7 @@ import { MatInputModule, MatFormFieldModule } from '@angular/material'
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDatepickerModule } from '@angular/material/datepicker'
-import { MatDatepickerIntl, MAT_DATEPICKER_SCROLL_STRATEGY_PROVIDER } from '@angular/material/datepicker';
+import { MatDatepickerIntl, MAT_DATEPICKER_SCROLL_STRATEGY_FACTORY_PROVIDER } from '@angular/material/datepicker';
 import { ToggleFieldComponent } from './form-fields/toggle-field/toggle-field.component';
 import { CounterFieldComponent } from './form-fields/counter-field/counter-field.component';
 import { MatButtonModule } from '@angular/material/button';
@@ -52,7 +52,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ],
     providers: [
         MatDatepickerIntl,
-        MAT_DATEPICKER_SCROLL_STRATEGY_PROVIDER,
+        MAT_DATEPICKER_SCROLL_STRATEGY_FACTORY_PROVIDER,
     ]
 })
 export class ComponentsModule {}

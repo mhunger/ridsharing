@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Ride} from '../models/Ride';
 import {Http} from '@angular/http';
-import 'rxjs/add/operator/toPromise';
 
 import { IFilterCondition } from '../interfaces/IFilterCondition';
 
