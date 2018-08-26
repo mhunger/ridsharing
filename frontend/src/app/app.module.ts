@@ -14,7 +14,6 @@ import { RideFormComponent } from './ride-form/ride-form.component';
 import { RideListComponent } from './ride-list/ride-list.component';
 import { FilterPanelComponent } from './components/filter-panel/filter-panel.component';
 import { RidesSearchService } from "./services/rides-search.service";
-import { StarRating } from './shared/star-rating/star-rating.component';
 import { LayoutHeaderComponent } from "./shared/layout-header/layout-header.component";
 import { SubmitButtonComponent } from "./shared/submit-button/submit-button.component";
 
@@ -35,7 +34,6 @@ const reducerMap = {
     FilterPanelComponent,
     RideDetailsComponent,
     RideFormComponent,
-    StarRating,
     SubmitButtonComponent,
   ],
   imports: [

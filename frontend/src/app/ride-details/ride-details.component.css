@@ -185,3 +185,10 @@ section.profiles .profiles .profile .meta-data {
   text-align: center;
   font-size: 1.2em;
 }
+
+section.driver-ratings .title {
+  font-size: 1.5em;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 1em;
+}

@@ -16,6 +16,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSliderModule } from '@angular/material/slider';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FeatureIconComponent } from './particles/feature-icon/feature-icon.component';
+import { StarRating } from './particles/star-rating/star-rating.component';
 
 @NgModule({
     declarations: [
@@ -26,6 +27,7 @@ import { FeatureIconComponent } from './particles/feature-icon/feature-icon.comp
         ToggleFieldComponent,
         CounterFieldComponent,
         FeatureIconComponent,
+        StarRating,
     ],
     imports: [
         CommonModule,
@@ -52,6 +54,7 @@ import { FeatureIconComponent } from './particles/feature-icon/feature-icon.comp
         FeatureIconComponent,
         MatButtonToggleModule,
         MatSliderModule,
+        StarRating,
     ],
     providers: [
         MatDatepickerIntl,
