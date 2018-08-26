@@ -1,11 +1,12 @@
 header {
-
+  background-image: linear-gradient(316deg, #002451, #00bfa6 91%, #00ceae);
+  padding: 1.5em 0;
 }
 
 header .card {
   width: 90%;
   background-color: #FFFFFF;
-  margin: 1em auto;
+  margin: 0 auto;
   padding: 1.5em 1em;
 }
 

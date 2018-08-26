@@ -7,6 +7,7 @@
 .layout-header .navbar-nav {
   margin-left: 5em;
   margin-top: 1.5em;
+  margin-bottom: 0;
 }
 
 .layout-header .navbar-nav a {
