@@ -1,0 +1,32 @@
+span.icon {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  position: relative;
+  bottom: -2px;
+}
+
+span.icon.circle {
+  border: 2px solid #979797;
+  border-radius: 20px;
+  padding: 6px;
+  width: 26px;
+  height: 26px;
+  background-size: 60% auto;
+  background-position: center center;
+}
+
+span.icon.payment-cash { background-image: url(/assets/rides/icons/cash.png); }
+span.icon.payment-paypal { background-image: url(/assets/rides/icons/paypal.png); }
+span.icon.payment-instant { background-image: url(/assets/rides/icons/instant.png); }
+span.icon.booking-reservation { background-image: url(/assets/rides/icons/reservation.png); }
+span.icon.pet { background-image: url(/assets/rides/icons/pet.png); }
+span.icon.seats { background-image: url(/assets/rides/icons/seats.png); }
+span.icon.woman { background-image: url(/assets/rides/icons/woman.png); }
+span.icon.smoking { background-image: url(/assets/rides/icons/smoking.png); }
+span.icon.baggage { background-image: url(/assets/rides/icons/baggage.png); }
+span.icon.detour { background-image: url(/assets/rides/icons/detour.png); }
+span.icon.up-arrow { background-image: url(/assets/rides/icons/up-arrow.jpg); }
+span.icon.down-arrow { background-image: url(/assets/rides/icons/down-arrow.jpg); }

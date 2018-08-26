@@ -15,6 +15,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSliderModule } from '@angular/material/slider';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FeatureIconComponent } from './particles/feature-icon/feature-icon.component';
 
 @NgModule({
     declarations: [
@@ -24,6 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
         RadiusSelectionList,
         ToggleFieldComponent,
         CounterFieldComponent,
+        FeatureIconComponent,
     ],
     imports: [
         CommonModule,
@@ -47,6 +49,7 @@ import { ReactiveFormsModule } from '@angular/forms';
         MapsAutocompleteDirective,
         ToggleFieldComponent,
         CounterFieldComponent,
+        FeatureIconComponent,
         MatButtonToggleModule,
         MatSliderModule,
     ],
