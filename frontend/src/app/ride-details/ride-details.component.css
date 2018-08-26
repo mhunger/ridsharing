@@ -192,3 +192,34 @@ section.driver-ratings .title {
   position: relative;
   margin-bottom: 1em;
 }
+
+section.driver-ratings .total-rating.columns {
+  display: flex;
+  margin-bottom: .5em;
+}
+
+section.driver-ratings .total-rating .rating-number span {
+  font-size: 2em;
+  margin-right: 10px;
+}
+
+section.driver-ratings .total-rating star-rating {
+  position: relative;
+  top: 10px;
+}
+
+section.driver-ratings .rating-container .title {
+  font-size: 1em;
+  margin-bottom: 5px;
+  color: #7a7e81;
+}
+
+section.driver-ratings .rating-container .columns {
+  display: flex;
+  flex-direction: row;
+}
+
+section.driver-ratings .rating-container .columns .rating-number {
+  margin-left: 10px;
+}
+
