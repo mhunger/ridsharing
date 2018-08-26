@@ -292,3 +292,8 @@ section.questions .message .column.content .meta-data {
 section.questions .message .section-spacing {
   margin: 1em 0;
 }
+
+section.booking {
+  display: flex;
+  justify-content: center;
+}
