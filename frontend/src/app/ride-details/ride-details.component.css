@@ -98,9 +98,11 @@ header .additional-info .free-seats:before {
   margin-right: 10px;
 }
 
-section.ride-features {
+section {
   background-color: #FFFFFF;
   padding: 2em 1.5em;
+}
+section.ride-features {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -108,4 +110,32 @@ section.ride-features {
 
 section.ride-features feature-icon {
   margin: 0 1em;
+}
+
+section.ride-description {
+  color: #4a4a4a;
+}
+
+section.ride-description .title {
+  font-size: 1.5em;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 1em;
+}
+
+section.ride-description .title:before {
+  content: ' ';
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 38px;
+  background-image: url(/assets/icons/quote.png);
+  background-size: 100% 100%;
+}
+
+section.ride-description p {
+  font-size: 1.1em;
+  line-height: 1.4em;
 }
