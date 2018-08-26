@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Ride } from '../models/Ride';
 import { FeatureIconType } from '../components/particles/feature-icon/feature-icon.types';
+import { IconSize } from '../components/particles/feature-icon/feature-icon.component';
 
 @Component({
   selector: 'app-ride-details',
@@ -11,6 +12,7 @@ export class RideDetailsComponent implements OnInit {
 
   public ride: Ride = <any>{};
   public featureIconType = FeatureIconType;
+  public largeIcon = IconSize.Large;
 
   constructor() {
     this.ride.id = 1;

@@ -86,3 +86,15 @@ header .additional-info .free-seats:before {
   background-size: 100% auto;
   margin-right: 10px;
 }
+
+section.ride-features {
+  background-color: #FFFFFF;
+  padding: 2em 1.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+section.ride-features feature-icon {
+  margin: 0 1em;
+}
