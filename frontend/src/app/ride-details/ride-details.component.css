@@ -1,0 +1,87 @@
+header {
+
+}
+
+header .card {
+  width: 90%;
+  background-color: #FFFFFF;
+  margin: 1em auto;
+  padding: 1.5em 1em;
+}
+
+header .card.rounded {
+  border-radius: 6px;
+}
+
+header .core-info {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #9b9b9b;
+  color: #4a4a4a;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+}
+
+header .core-info .field-icons-container {
+  position: relative;
+  top: -15%;
+}
+
+header .core-info .column.left {
+  width: 50px;
+}
+
+header .core-info .travel-route .destination {
+  margin-top: .5em;
+}
+
+header .core-info .travel-route .location {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+header .core-info .travel-route .time-and-date {
+  color: #777777;
+}
+
+header .core-info .travel-route .time-and-date .time {
+  margin-right: 1em;
+}
+
+header .additional-info {
+  display: flex;
+  flex-direction: row;
+}
+
+header .additional-info .column {
+  flex-grow: 1;
+}
+
+header .additional-info .column.right {
+  padding: 2px 0;
+  border-left: 1px solid #9b9b9b;
+}
+
+header .additional-info .price {
+  color: #0fb2b2;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+header .additional-info .free-seats {
+  font-size: 1.5em;
+  line-height: 2em;
+}
+header .additional-info .free-seats:before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 2px;
+  background: url('/assets/icons/seat.png');
+  background-size: 100% auto;
+  margin-right: 10px;
+}

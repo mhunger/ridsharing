@@ -1,3 +1,50 @@
-<div class="jumbotron city-img">
-
+<div>
+  <header>
+    <div class="card rounded">
+      <div class="core-info columns">
+        <div class="column left">
+            <div style="display: none">
+                <svg id="location-field-icons" width="100%" height="100%" preserveAspectRatio xmlns="http://www.w3.org/2000/svg">
+                  <g>
+                    <title>background</title>
+                    <rect fill="#fff" id="canvas_background" height="40" width="12" y="-1" x="-1"/>
+                    <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+                    <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+                    </g>
+                  </g>
+                  <g>
+                    <title>Layer 1</title>
+                    <ellipse stroke="#000" ry="3.5" rx="3.5" id="svg_1" cy="5" cx="5.125" stroke-width="0" fill="#ff0000"/>
+                    <ellipse ry="3.5" rx="3.5" id="svg_3" cy="32.596397" cx="5.125" stroke="#00bfbf" fill="none"/>
+                    <line stroke-width="2" stroke-dasharray="2,2" stroke-linecap="null" stroke-linejoin="null" id="svg_4" y2="27.434415" x2="4.982143" y1="11.714286" x1="4.982143" stroke="#999999" fill="none"/>
+                  </g>
+                </svg>
+              </div>
+              <svg viewBox="-2 -12 40 50" width="90" height="100" class="field-icons-container">
+                  <use xlink:href="#location-field-icons"/>
+              </svg>
+        </div>
+        <div class="travel-route columns right">
+          <div class="departure">
+            <div class="location">München</div>
+            <div class="time-and-date">
+              <span class="time">08:00 Uhr</span>
+              <span class="date">15.12.2018</span>
+            </div>
+          </div>
+          <div class="destination">
+            <div class="location">Frankfurt</div>
+            <div class="time-and-date">
+              <span class="time">12:00 Uhr</span>
+              <span class="date">15.12.2018</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="additional-info columns">
+        <div class="column left free-seats">3 freie Plätze</div>
+        <div class="column right price">34€</div>
+      </div>
+    </div>
+  </header>
 </div>

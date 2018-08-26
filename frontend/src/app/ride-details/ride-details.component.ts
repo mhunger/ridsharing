@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Ride } from '../models/Ride';
 
 @Component({
   selector: 'app-ride-details',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RideDetailsComponent implements OnInit {
 
-  constructor() { }
+  public ride: Ride = <any>{};
 
-  ngOnInit() {
+  constructor() {
+    this.ride.id = 1;
   }
 
+  ngOnInit() {}
 }
