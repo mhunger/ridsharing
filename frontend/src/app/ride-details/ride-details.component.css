@@ -250,3 +250,45 @@ section.passengers .passenger-list .passenger {
   background-size: cover;
   display: inline-block;
 }
+
+section.questions .message {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1em;
+}
+
+section.questions .message .column.profile {
+  flex-basis: 40%;
+}
+
+section.questions .message .column.profile .avatar {
+  display: inline-block;
+  width: 85%;
+  height: auto;
+  padding-bottom: 85%;
+  border-radius: 50%;
+  background-image: url(/assets/dummy/avatar.png);
+  background-size: cover;
+}
+
+section.questions .message .column.content .author {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+section.questions .message .column.content .text {
+  color: #6f6f6f;
+  background-color: #f5f6fb;
+  padding: .5em;
+  border-radius: 5px;
+  margin: 5px 0;
+  line-height: 1.5em;
+}
+
+section.questions .message .column.content .meta-data {
+  color: #8d8d8d;
+}
+
+section.questions .message .section-spacing {
+  margin: 1em 0;
+}
