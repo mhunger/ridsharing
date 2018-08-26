@@ -297,3 +297,24 @@ section.booking {
   display: flex;
   justify-content: center;
 }
+
+section.quick-links {
+  width: 100%;
+  overflow-x: scroll;
+  white-space: nowrap;
+  border-bottom: 1px solid #979797;
+  padding: 0;
+}
+
+section.quick-links a {
+  display: inline-block;
+  padding: 1em 1.6em;
+  font-size: 1.2em;
+  color: #34495e;
+  font-weight: bold;
+}
+
+section.quick-links a:hover {
+  color: #0fb2b2;
+}
+
