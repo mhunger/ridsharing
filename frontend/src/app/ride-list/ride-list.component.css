@@ -109,6 +109,10 @@
   border-bottom: 1px solid #bdbdbd;
 }
 
+.ride-list .ride .details .row.features feature-icon {
+  display: inline-block;
+}
+
 .ride-list .ride .details .row.features > div {
   padding: 0;
 }

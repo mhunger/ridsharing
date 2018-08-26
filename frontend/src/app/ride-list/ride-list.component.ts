@@ -4,6 +4,7 @@ import { RootState } from '../state/root.state';
 import { filter, map, first } from 'rxjs/operators';
 import { RidesSearch, RidesSearchFilterUpdate } from '../state/ride-search/rides-search.actions';
 import { Observable } from 'rxjs';
+import { FeatureIconType } from '../components/particles/feature-icon/feature-icon.types';
 
 @Component({
   selector: 'app-ride-list',
@@ -11,7 +12,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./ride-list.component.css']
 })
 export class RideListComponent implements OnInit {
-
+  public featureIconTypes = FeatureIconType;
   public ridesSearchResults$ = this.store
             .select(state => state.ridesSearch)
             .pipe(

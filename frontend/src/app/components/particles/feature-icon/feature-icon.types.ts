@@ -4,7 +4,7 @@ export enum FeatureIconType {
   BookingInstant= 'booking-instant',
   BookingReservation= 'booking-reservation',
   Pet= 'pet',
-  Seats= 'seats',
+  TwoSeats= 'seats',
   Woman= 'woman',
   Smoking= 'smoking',
   // TODO: Provide multiple sizes
