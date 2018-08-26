@@ -102,6 +102,14 @@ section {
   background-color: #FFFFFF;
   padding: 2em 1.5em;
 }
+
+section > .title {
+  font-size: 1.5em;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 1em;
+}
+
 section.ride-features {
   display: flex;
   flex-direction: row;
@@ -223,3 +231,22 @@ section.driver-ratings .rating-container .columns .rating-number {
   margin-left: 10px;
 }
 
+section.passengers .passenger-list {
+}
+
+section.passengers .passenger-list .passenger-container {
+  display: inline-block;
+  height: 80px;
+  width: 65px;
+  overflow: visible;
+}
+
+section.passengers .passenger-list .passenger {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #FFFFFF;
+  background: url(/assets/dummy/avatar.png) no-repeat;
+  background-size: cover;
+  display: inline-block;
+}
