@@ -20,7 +20,7 @@ span.icon.circle {
 
 span.icon.payment-cash { background-image: url(/assets/rides/icons/cash.png); }
 span.icon.payment-paypal { background-image: url(/assets/rides/icons/paypal.png); }
-span.icon.payment-instant { background-image: url(/assets/rides/icons/instant.png); }
+span.icon.booking-instant { background-image: url(/assets/rides/icons/instant.png); }
 span.icon.booking-reservation { background-image: url(/assets/rides/icons/reservation.png); }
 span.icon.pet { background-image: url(/assets/rides/icons/pet.png); }
 span.icon.seats { background-image: url(/assets/rides/icons/seats.png); }
