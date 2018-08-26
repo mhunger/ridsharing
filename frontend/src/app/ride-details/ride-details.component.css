@@ -140,23 +140,23 @@ section.ride-description p {
   line-height: 1.4em;
 }
 
-section.profile-rating .title {
+section.profiles .title {
   font-size: 1.5em;
   font-weight: bold;
   position: relative;
   margin-bottom: 1em;
 }
 
-section.profile-rating .profiles {
+section.profiles .profiles {
   display: flex;
   flex-direction: row;
 }
 
-section.profile-rating .profiles .profile {
+section.profiles .profiles .profile {
   flex-grow: 1;
 }
 
-section.profile-rating .profiles .profile .avatar {
+section.profiles .profiles .profile .avatar {
   width: 60%;
   margin: 0 auto;
   padding-bottom: 60%;
@@ -165,23 +165,23 @@ section.profile-rating .profiles .profile .avatar {
   margin-bottom: .5em;
 }
 
-section.profile-rating .profiles .profile.person .avatar {
+section.profiles .profiles .profile.person .avatar {
   background-image: url(/assets/dummy/avatar.png)
 }
-section.profile-rating .profiles .profile.car .avatar {
+section.profiles .profiles .profile.car .avatar {
   background-image: url(/assets/dummy/audia8.jpg)
 }
 
-section.profile-rating .profiles .profile {
+section.profiles .profiles .profile {
   color: #4a4a4a;
 }
 
-section.profile-rating .profiles .profile .name {
+section.profiles .profiles .profile .name {
   text-align: center;
   font-size: 1.4em;
 }
 
-section.profile-rating .profiles .profile .meta-data {
+section.profiles .profiles .profile .meta-data {
   text-align: center;
   font-size: 1.2em;
 }
