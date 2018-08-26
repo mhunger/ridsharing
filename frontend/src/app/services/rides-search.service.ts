@@ -1,6 +1,6 @@
-import {Injectable} from '@angular/core';
-import {Ride} from '../models/Ride';
-import {Http} from '@angular/http';
+import { Injectable } from '@angular/core';
+import { Ride } from '../models/Ride';
+import { Http } from '@angular/http';
 import { BackendBaseService } from './backend-base.service';
 import { IRidesSearchParameters } from '../state/ride-search/rides-search.actions';
 
