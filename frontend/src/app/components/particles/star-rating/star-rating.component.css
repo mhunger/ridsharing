@@ -2,3 +2,20 @@
   width: 12px;
   height: auto;
 }
+
+.star-container {
+  display: inline;
+  position: relative;
+}
+
+#star {
+  fill: #ffffff;
+}
+
+:host(.white) #star {
+  fill: #ffffff;
+}
+
+:host(.primary) #star {
+  fill: #0c9797;
+}

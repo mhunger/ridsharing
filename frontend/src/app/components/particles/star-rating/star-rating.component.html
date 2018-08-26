@@ -1,1 +1,16 @@
-<img *ngFor="let star of stars" src="/assets/star.svg" alt="" class="star" />
+<div>
+  <div style="display: none;">
+    <svg height="20px" width="20px" version="1.1" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+      xmlns:xlink="http://www.w3.org/1999/xlink" id="star-svg">
+      <g fill="#CCCCCC" class="star" id="Core" transform="translate(-296.000000, -422.000000)">
+        <g id="star" transform="translate(296.000000, 422.500000)">
+          <path d="M10,15.273 L16.18,19 L14.545,11.971 L20,7.244 L12.809,6.627 L10,0 L7.191,6.627 L0,7.244 L5.455,11.971 L3.82,19 L10,15.273 Z"
+            id="Shape" />
+        </g>
+      </g>
+    </svg>
+  </div>
+  <div class="star-container">
+    <svg *ngFor="let star of stars" class="star-element" viewBox="0 0 20 20" width="20" height="20"><use xlink:href="#star-svg"/></svg>
+  </div>
+</div>
