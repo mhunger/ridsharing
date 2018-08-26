@@ -139,3 +139,49 @@ section.ride-description p {
   font-size: 1.1em;
   line-height: 1.4em;
 }
+
+section.profile-rating .title {
+  font-size: 1.5em;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 1em;
+}
+
+section.profile-rating .profiles {
+  display: flex;
+  flex-direction: row;
+}
+
+section.profile-rating .profiles .profile {
+  flex-grow: 1;
+}
+
+section.profile-rating .profiles .profile .avatar {
+  width: 60%;
+  margin: 0 auto;
+  padding-bottom: 60%;
+  border-radius: 50%;
+  background-size: 100% 100%;
+  margin-bottom: .5em;
+}
+
+section.profile-rating .profiles .profile.person .avatar {
+  background-image: url(/assets/dummy/avatar.png)
+}
+section.profile-rating .profiles .profile.car .avatar {
+  background-image: url(/assets/dummy/audia8.jpg)
+}
+
+section.profile-rating .profiles .profile {
+  color: #4a4a4a;
+}
+
+section.profile-rating .profiles .profile .name {
+  text-align: center;
+  font-size: 1.4em;
+}
+
+section.profile-rating .profiles .profile .meta-data {
+  text-align: center;
+  font-size: 1.2em;
+}
